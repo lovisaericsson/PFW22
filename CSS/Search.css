@@ -8,6 +8,10 @@ body {
     padding: 15px;
 }
 
+.no-display{
+    display: none;
+}
+
 
 /* TOP FILTERS – Länder, städer, program */
 .mainfilters {
@@ -15,13 +19,11 @@ body {
     justify-content: center
 }
 
-.filter-btn {
-    margin-bottom: 0;
-    padding: 10px;
+.mainfilter-btn {
+    padding: 5px 10px 5px 10px;
     flex-grow: 1;
     border-radius: 5px;
     border: none;
-    outline: none;
     text-align: center;
     font-size: 5vw;
     font-family: Arial, Helvetica, sans-serif;
@@ -29,26 +31,24 @@ body {
     color: white;
 }
 
-.filter-btn:nth-child(1), 
-.filter-btn:nth-child(2){
+.mainfilter-btn:nth-child(1), 
+.mainfilter-btn:nth-child(2){
     margin-right: 10px;
 }
 
 
 /* FILTER PROGRAMS */
-.programfilters {
+.filterprogram {
     margin-top: 10px;
-    padding: 0;
-    background-color: white;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     border-radius: 5px;
+    background-color: white;
 }
 
-.program-filter-btn {
+.filter-program-btn {
     margin-bottom: 0;
-    padding: 8px;
+    padding: 5px 10px 5px 10px;
     flex-grow: 1;
     border-radius: 5px;
     border: none;
@@ -61,26 +61,25 @@ body {
 }
 
 .filter-heading {
-    font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 10px 0px 0px 10px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-.filter-subject-btns {
+.filter-subject-btns, .filter-level-btns {
+    padding: 5px;
     display: flex;
     flex-wrap: wrap;
-    padding: 5px;
 }
 
-.subject-filter-btn {
-    flex: 1 0 21%;
-    padding: 7px;
+.subject-filter-btn, .level-filter-btn {
     margin: 4px;
+    padding: 7px;
+    flex: 1 0 21%;
     border-radius: 5px;
     border: none;
     outline: none;
 }
-
 
 /* SEARCH FIELD */
 .inputfield-container {
