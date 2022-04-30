@@ -1,0 +1,96 @@
+body {
+    margin: 0;
+    height: 100vh;
+}
+
+.search-header {
+    background-color: black;
+    padding: 15px;
+}
+
+
+/* TOP FILTERS – Länder, städer, program */
+.mainfilters {
+    display: flex;
+    justify-content: center
+}
+
+.filter-btn {
+    margin-bottom: 0;
+    padding: 10px;
+    flex-grow: 1;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    text-align: center;
+    font-size: 5vw;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(135, 135, 135);
+    color: white;
+}
+
+.filter-btn:nth-child(1), 
+.filter-btn:nth-child(2){
+    margin-right: 10px;
+}
+
+
+/* FILTER PROGRAMS */
+.programfilters {
+    margin-top: 10px;
+    padding: 0;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+.program-filter-btn {
+    margin-bottom: 0;
+    padding: 8px;
+    flex-grow: 1;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    text-align: left;
+    font-size: 5vw;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(135, 135, 135);
+    color: white;
+}
+
+.filter-heading {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 10px 0px 0px 10px;
+}
+
+.filter-subject-btns {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5px;
+}
+
+.subject-filter-btn {
+    flex: 1 0 21%;
+    padding: 7px;
+    margin: 4px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+
+
+/* SEARCH FIELD */
+.inputfield-container {
+    display: flex;
+}
+
+.inputfield {
+    width: 100%;
+    margin-top: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    border-style: none;
+}
