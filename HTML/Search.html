@@ -4,9 +4,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/Search.css">
     <title>Search</title>
 </head>
 <body>
-    
+    <form class="search-header">
+        <div class="mainfilters">
+            <input type="button" class="mainfilter-btn" value="LÄNDER">
+            <input type="button" class="mainfilter-btn" value="STÄDER">
+            <input type="button" class="mainfilter-btn" value="PROGRAM">
+        </div>
+        <div class="filterprogram">
+            <button class="filter-program-btn">FILTRERA PROGRAM</button>
+            <div class="filters-dropdown">
+                <h3 class="filter-heading">ÄMNEN</h3>
+                <div class="filter-subject-btns">
+                    <input type="button" class="subject-filter-btn" value="DESIGN">
+                    <input type="button" class="subject-filter-btn" value="TEKNIK">
+                    <input type="button" class="subject-filter-btn" value="MATTE">
+                    <input type="button" class="subject-filter-btn" value="JURIDIK">
+                    <input type="button" class="subject-filter-btn" value="HISTORIA">
+                    <input type="button" class="subject-filter-btn" value="MEDICIN">
+                    <input type="button" class="subject-filter-btn" value="SOCIOLOGI">
+                </div>
+                <h3 class="filter-heading">NIVÅ</h3>
+                <div class="filter-level-btns">
+                    <input type="button" class="level-filter-btn" value="BACHELOR">
+                    <input type="button" class="level-filter-btn" value="MASTERS">
+                    <input type="button" class="level-filter-btn" value="DOCTORATE">
+                </div>
+            </div>
+        </div>
+        <div class="inputfield-container">
+            <input class="inputfield" type="text">
+        </div>
+    </form>
 </body>
 </html>

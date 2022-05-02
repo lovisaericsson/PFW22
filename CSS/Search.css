@@ -1,0 +1,103 @@
+body {
+    margin: 0;
+    height: 100vh;
+}
+
+.search-header {
+    background-color: black;
+    padding: 15px;
+}
+
+.no-display{
+    display: none;
+}
+
+
+/* TOP FILTERS – Länder, städer, program */
+.mainfilters {
+    display: flex;
+    justify-content: center
+}
+
+.mainfilter-btn {
+    padding: 5px 10px 5px 10px;
+    flex-grow: 1;
+    border-radius: 5px;
+    border: none;
+    text-align: center;
+    font-size: 5vw;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(135, 135, 135);
+    color: white;
+}
+
+.mainfilter-btn:nth-child(1), 
+.mainfilter-btn:nth-child(2){
+    margin-right: 10px;
+}
+
+
+/* FILTER PROGRAMS */
+.filterprogram {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.filter-program-btn {
+    margin-bottom: 0;
+    padding: 5px 10px 5px 10px;
+    flex-grow: 1;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    text-align: left;
+    font-size: 5vw;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(135, 135, 135);
+    color: white;
+    background-image: url(../Images/arrow-up.png);
+    background-size: 10vw;
+    background-repeat: no-repeat;
+    background-position: 98% 50%;
+}
+
+.filter-heading {
+    margin: 0;
+    padding: 10px 0px 0px 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.filter-subject-btns, .filter-level-btns {
+    padding: 5px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.subject-filter-btn, .level-filter-btn {
+    margin: 4px;
+    padding: 7px;
+    flex: 1 0 21%;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+
+/* SEARCH FIELD */
+.inputfield-container {
+    display: flex;
+}
+
+.inputfield {
+    width: 100%;
+    margin-top: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    border-style: none;
+    background-image: url(../Images/search-icon.png);
+    background-size: 5vw;
+    background-repeat: no-repeat;
+    background-position: 98% 50%;
+}
