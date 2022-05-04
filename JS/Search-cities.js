@@ -1,3 +1,5 @@
+/*
+
 let body = document.querySelector("body");
 
 function createPopUp () {
@@ -50,3 +52,5 @@ function dropDown ()
 function dropDownEntertainment ()
 
 function dropDownProgram ()
+
+*/
