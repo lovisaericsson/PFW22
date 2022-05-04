@@ -4,7 +4,7 @@
 
 let countryBtn = document.getElementById("countries-btn");
 let cityBtn = document.getElementById("cities-btn");
-let courseBtn = document.getElementById("courses-btn");
+let programmesBtn = document.getElementById("courses-btn");
 
 function addEventHandlers () {
 
@@ -16,8 +16,8 @@ function addEventHandlers () {
         cityBtn.classList.toggle("active");
     })
 
-    courseBtn.addEventListener("click", function () {
-        courseBtn.classList.toggle("active");
+    programmesBtn.addEventListener("click", function () {
+        programmesBtn.classList.toggle("active");
     })
 }
 
@@ -75,8 +75,16 @@ function toggleOptions () {
     let results = [];
 
     if (countryBtn.classList.contains("active") == true) {
-        results.push(getAllCountries());
+        results = [getAllCountries()]
     } 
+
+    if (cityBtn.classList.contains("active") == true) {
+        results = [...results, ...getAllCities()]
+    }
+
+    if (programmesBtn.classList.contains("active") == true) {
+        results = [...results, ...getAllProgrammes()]
+    }
 
     return results;
 }
