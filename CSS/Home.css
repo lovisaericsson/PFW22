@@ -1,0 +1,22 @@
+body {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+#menu {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.123);
+}
+
+.menuElement img {
+    height: 10vw;
+    width: 10vw;
+}
+
+.menuElement {
+    padding: 20px;
+}
+

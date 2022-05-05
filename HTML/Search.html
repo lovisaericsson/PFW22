@@ -8,11 +8,8 @@
     <title>Search</title>
     <link rel="shortcut icon" type="image/jpg" href="../Images/Favicon.png"/>
     
-    <link rel="stylesheet" href="/CSS/Contact.css">
-    <link rel="stylesheet" href="/CSS/FAQ.css">
-    <link rel="stylesheet" href="/CSS/Home.css">
-    <link rel="stylesheet" href="/CSS/Style.css">
-    <link rel="stylesheet" href="/CSS/Search.css">
+    <link rel="stylesheet" href="../CSS/Search.css">
+    <link rel="stylesheet" href="../CSS/Style.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,9 +18,9 @@
 <body>
     <form class="search-header">
         <div class="mainfilters">
-            <input type="button" class="mainfilter-btn" value="LÄNDER">
-            <input type="button" class="mainfilter-btn" value="STÄDER">
-            <input type="button" class="mainfilter-btn" value="PROGRAM">
+            <input type="button" class="mainfilter-btn" id="countries-btn" value="LÄNDER">
+            <input type="button" class="mainfilter-btn" id="cities-btn" value="STÄDER">
+            <input type="button" class="mainfilter-btn" id="courses-btn" value="PROGRAM">
         </div>
         <div class="filterprogram">
             <button class="filter-program-btn">FILTRERA PROGRAM</button>
@@ -47,8 +44,16 @@
             </div>
         </div>
         <div class="inputfield-container">
-            <input class="inputfield" type="text">
+            <input id="inputfield" type="text">
         </div>
     </form>
+
+    <div id="results"></div>
+    <script src="../JS/Search-countries.js"></script>
+    <script src="../JS/Search-cities.js"></script>
+    <script src="../JS/Search-courses.js"></script>
+    <script src="../JS/Main.js"></script>
+    <script src="../JS/CommentsProgramme.js"></script>
+    <script src="../JS/Database.js"></script>
 </body>
 </html>
