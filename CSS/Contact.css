@@ -1,0 +1,91 @@
+body {
+    margin: 0;
+}
+
+/* HEADER */
+.header {
+    width: 100vw;
+    height: 15vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+
+h1 {
+    margin: 0;
+    color: white;
+}
+
+
+/* ICONS */
+.contact-info {
+    width: 100vw;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.contact-info div{
+    width: 25vw;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-info div img{
+    width: 12vw;
+}
+
+.contact-info div p{
+    font-size: 3.5vw;
+}
+
+
+/* FORM */
+.contact-form {
+    margin: 0px 20px 20px 20px;
+    padding-bottom: 5%;
+    padding-top: 5%;
+    border-radius: 5px;
+    background-color: #c4c4c4;
+}
+
+form {
+    text-align: center;
+}
+
+form input:nth-child(2), form input:nth-child(4), input:nth-child(6){
+    width: 90%;
+    height: 5vh;
+    margin-bottom: 10px;
+    outline: none;
+    border-style: none;
+    border-radius: 5px;
+}
+
+form textarea{
+    width: 90%;
+    margin-bottom: 10px;
+    border-style: none;
+    border-radius: 5px;
+    resize: none;
+    font-family:'Nunito Sans', sans-serif; 
+}
+
+form button{
+    padding: 3vw 5vw 3vw 5vw;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+
+h2 {
+    margin-bottom: 2px;
+    padding-left: 5%;
+    font-size: 4vw;
+    text-align: left;
+}
