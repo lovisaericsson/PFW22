@@ -18,14 +18,14 @@ h1 {
 
 .contact-info {
     width: 100vw;
-    margin-top: 5px;
+    margin-top: 20px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
 }
 
 .contact-info div{
-    width: 20vw;
-    padding: 10px;
+    width: 25vw;
+    padding: 8px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -33,7 +33,7 @@ h1 {
 }
 
 .contact-info div img{
-    width: 15vw;
+    width: 12vw;
 }
 
 .contact-info div p{
@@ -42,7 +42,7 @@ h1 {
 
 
 .contact-form {
-    margin: 20px;
+    margin: 0px 20px 20px 20px;
     padding-bottom: 5%;
     padding-top: 5%;
     background-color: #c4c4c4;
