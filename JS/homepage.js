@@ -19,8 +19,8 @@ const menuElements = [
     },
 
     { //Contact
-        icon: "../Images/Icons/about.png", //will be changed to @ sign
-        iconClicked: "../Images/Icons/about-clicked.png",
+        icon: "../Images/Icons/contact.png",
+        iconClicked: "../Images/Icons/about-clicked.png", //Will be changed to "clicked" mail
         url: "Contact.html"
 
     },
@@ -33,17 +33,7 @@ const menuElements = [
     },
 ]
 
-// function currentURL(filename) {
-//     let path = window.location.pathname;
-//     let page = path.split("/").pop();
-//     console.log(page.split(".")[0].toLowerCase());
-
-//     if (page == filename && page.split(".")[0].toLowerCase() == menuElements[i]) {
-//         return true;
-//     }
-// }
-
-
+// Checks is html-name is the same as image-name
 function check(i) {
     let path = window.location.pathname;
     let pagename = path.split("/").pop().split(".")[0].toLocaleLowerCase();
@@ -55,26 +45,19 @@ function check(i) {
     }
 }
 
-
+// Builds menu
 function buildMenu() {
-
     for (let i = 0; i < 4; i++) {
-
         let checker = check(i);
-
         let div = document.createElement("div");
         if (checker == true) {
             div.innerHTML = `<img src="${menuElements[i].iconClicked}">`
         } else {
             div.innerHTML = `<img src="${menuElements[i].icon}">`
         }
-
         div.classList.add("menuElement");
         menu.appendChild(div);
-
     }
-
-
 }
 
 buildMenu()
