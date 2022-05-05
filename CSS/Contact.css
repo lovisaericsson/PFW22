@@ -1,14 +1,16 @@
 body {
     margin: 0;
 }
+
+/* HEADER */
 .header {
     width: 100vw;
     height: 15vh;
-    background-color: black;
     margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: black;
 }
 
 h1 {
@@ -16,6 +18,8 @@ h1 {
     color: white;
 }
 
+
+/* ICONS */
 .contact-info {
     width: 100vw;
     margin-top: 20px;
@@ -41,48 +45,47 @@ h1 {
 }
 
 
+/* FORM */
 .contact-form {
     margin: 0px 20px 20px 20px;
     padding-bottom: 5%;
     padding-top: 5%;
-    background-color: #c4c4c4;
     border-radius: 5px;
+    background-color: #c4c4c4;
 }
 
 form {
     text-align: center;
-
 }
 
 form input:nth-child(2), form input:nth-child(4), input:nth-child(6){
-    margin-bottom: 10px;
-    height: 5vh;
-    outline: none;
     width: 90%;
+    height: 5vh;
+    margin-bottom: 10px;
+    outline: none;
     border-style: none;
     border-radius: 5px;
 }
 
 form textarea{
-    margin-bottom: 10px;
     width: 90%;
+    margin-bottom: 10px;
     border-style: none;
     border-radius: 5px;
     resize: none;
-    font-family:'Nunito Sans', sans-serif;
+    font-family:'Nunito Sans', sans-serif; 
 }
 
 form button{
+    padding: 3vw 5vw 3vw 5vw;
     border-radius: 5px;
     border: none;
     outline: none;
-    padding: 3vw 5vw 3vw 5vw;
 }
 
-
 h2 {
-    font-size: 4vw;
     margin-bottom: 2px;
-    text-align: left;
     padding-left: 5%;
+    font-size: 4vw;
+    text-align: left;
 }
