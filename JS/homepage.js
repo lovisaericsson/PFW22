@@ -50,7 +50,7 @@ function buildMenu () {
         let checker = currentURL("Home.html");
 
         let div = document.createElement("div"); 
-        if (checker == true) {
+        if (checker == true) { // detta fungerar inte just nu, väljer inte enbart rätt div (alla)
             div.innerHTML = `<img src="${menuElements[i].iconClicked}">`
         } else {
             div.innerHTML = `<img src="${menuElements[i].icon}">`
