@@ -1,6 +1,7 @@
 //function for building menu
 
 let menu = document.getElementById("menu");
+let background = document.getElementById("background");
 
 const menuElements = [
 
@@ -60,4 +61,25 @@ function buildMenu() {
     }
 }
 
+
+function setBackground () {
+    
+    let bgDiv = document.createElement("div");
+    background.appendChild(bgDiv);
+
+    var d = new Date();
+    var hours = d.getHours();
+
+    if (hours >= 18 && hours <= 7) {
+        bgDiv.innerHTML = `<img src="../Images/Startpage_GIFs/day.gif">`
+    } else {
+        bgDiv.innerHTML =`<img src="../Images/Startpage_GIFs/night.gif">`
+    }
+
+    bgDiv.classList.add("bgImage");
+
+}
+
 buildMenu()
+
+setBackground();

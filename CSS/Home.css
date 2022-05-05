@@ -2,13 +2,16 @@ body {
     display: flex;
     align-items: flex-end;
     justify-content: center;
+    position: relative;
 }
 
 #menu {
     display: flex;
     justify-content: space-around;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.123);
+    background-color: rgb(245, 245, 245);
+    z-index: 2;
+    position: absolute;
 }
 
 .menuElement img {
@@ -18,5 +21,18 @@ body {
 
 .menuElement {
     padding: 20px;
+}
+
+.bgImage {
+    display: flex;
+    z-index: -1;
+    height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+.bgImage img {
+    height: fit-content;
+    width: fit-content;
 }
 
