@@ -17,6 +17,10 @@ let filoBtn = document.getElementById("filoBtn");
 let medicineBtn = document.getElementById("medicineBtn");
 let sociologyBtn = document.getElementById("sociologyBtn");
 
+let bachelorsBtn = document.getElementById("bachelorsBtn");
+let mastersBtn = document.getElementById("mastersBtn");
+let doctorateBtn = document.getElementById("doctorateBtn");
+
 
 // Event handlers for country, city, programme, filter buttons
 function addEventHandlers() {
@@ -90,15 +94,6 @@ function addEventHandlers() {
         toggleOptions();
     })
 }
-
-// //Untoggled fetch results for each category (COUNTRIES, CITIES, PROGRAMMES)
-// function unToggled() {
-//     const DATABASE = [];
-
-//     DATABASE.push(COUNTRIES, CITIES, PROGRAMMES)
-
-//     return DATABASE;
-// }
 
 // Stores ALL countries in an array
 function getAllCountries() {
@@ -175,6 +170,18 @@ function toggleOptions() {
         results = [...filterFilo(results)]
         results = [...filterMedicine(results)]
         results = [...filterSociology(results)]
+        results = [...filterBacherlors(results)]
+        results = [...filterMasters(results)]
+        results = [...filterDoctorate(results)]
+
+        // If no subject filters are selected
+        if (results.length == 0) {
+            results = [...getAllProgrammes()]
+            results = [...filterBacherlors(results)];
+            results = [...filterMasters(results)]
+            results = [...filterDoctorate(results)]
+        }
+
     }
 
     // If programme is not toggled, dont show filters
@@ -187,8 +194,35 @@ function toggleOptions() {
     if (results.length == 0) {
         results = [...getAllCountries(), ...getAllCities(), ...getAllProgrammes()]
     }
-    console.log(results)
+    toggleColors();
+    console.log(results);
     return results;
+}
+
+function toggleColors() {
+    // Colors for city, country, program, programfilter
+    let mainButtons = [countryBtn, cityBtn, programmeBtn, filterBtn];
+    for (let i = 0; i < mainButtons.length; i++) {
+        // If active, background color is lightgray
+        if (mainButtons[i].classList.contains("active") == true) {
+            mainButtons[i].style.backgroundColor = "lightgray";
+        } // If inactive, background color is darkgray 
+        else if (mainButtons[i].classList.contains("active") == false) {
+            mainButtons[i].style.backgroundColor = "rgb(135, 135, 135)";
+        }
+    }
+    // Colors for filter subject and level
+    let filterButtons = [designBtn, techBtn, mathBtn, lawBtn, filoBtn, medicineBtn,
+        sociologyBtn, bachelorsBtn, mastersBtn, doctorateBtn];
+    for (let j = 0; j < filterButtons.length; j++) {
+        // If active, background color is darkgray
+        if (filterButtons[j].classList.contains("active") == true) {
+            filterButtons[j].style.backgroundColor = "darkgray";
+        } // If inactive, background color is darkgray
+        else if (filterButtons[j].classList.contains("active") == false) {
+            filterButtons[j].style.backgroundColor = "lightgray";
+        }
+    }
 }
 
 // Program filter subject functions
@@ -238,6 +272,29 @@ function filterSociology(results) {
     // If button is not toggled, the belonging subject results will not show
     if (sociologyBtn.classList.contains("active") == false) {
         results = results.filter((result) => result.subjectID !== 4);
+    }
+    return results;
+}
+
+// Program filter level functions
+function filterBacherlors(results) {
+    // If button is not toggled, the belonging subject results will not show
+    if (bachelorsBtn.classList.contains("active") == true) {
+        results = results.filter((result) => result.level == 0);
+    }
+    return results;
+}
+function filterMasters(results) {
+    // If button is not toggled, the belonging subject results will not show
+    if (mastersBtn.classList.contains("active") == true) {
+        results = results.filter((result) => result.level == 1);
+    }
+    return results;
+}
+function filterDoctorate(results) {
+    // If button is not toggled, the belonging subject results will not show
+    if (doctorateBtn.classList.contains("active") == true) {
+        results = results.filter((result) => result.level == 2);
     }
     return results;
 }
