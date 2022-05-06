@@ -152,7 +152,6 @@ function toggleOptions() {
 
     // If programme is toggled...
     if (programmeBtn.classList.contains("active") == true) {
-        programmeBtn.style.backgroundColor = "darkgray"; //decide on color later
         //...show filter
         filter.classList.remove("no-display");
         // If filter btn is untoggled, dont show filters
@@ -179,7 +178,6 @@ function toggleOptions() {
 
     // If programme is not toggled, dont show filters
     if (programmeBtn.classList.contains("active") == false) {
-        programmeBtn.style.backgroundColor = "lightgray"; //decide on color later
         filter.classList.add("no-display");
     }
 
@@ -187,9 +185,38 @@ function toggleOptions() {
     if (results.length == 0) {
         results = [...getAllCountries(), ...getAllCities(), ...getAllProgrammes()]
     }
+    toggleColors();
     console.log(results)
     return results;
 }
+
+function toggleColors() {
+    // Colors for city, country, program, programfilter
+    let mainButtons = [countryBtn, cityBtn, programmeBtn, filterBtn];
+    for (let i = 0; i < mainButtons.length; i++) {
+        // If active, background color is lightgray
+        if (mainButtons[i].classList.contains("active") == true) {
+            mainButtons[i].style.backgroundColor = "lightgray";
+        } // If inactive, background color is darkgray 
+        else if (mainButtons[i].classList.contains("active") == false) {
+            mainButtons[i].style.backgroundColor = "rgb(135, 135, 135)";
+        }
+    }
+    // Colors for filter subject and level
+    let filterButtons = [designBtn, techBtn, mathBtn, lawBtn, filoBtn, medicineBtn, sociologyBtn];
+    for (let j = 0; j < filterButtons.length; j++) {
+        // If active, background color is darkgray
+        if (filterButtons[j].classList.contains("active") == true) {
+            filterButtons[j].style.backgroundColor = "darkgray";
+        } // If inactive, background color is darkgray
+        else if (filterButtons[j].classList.contains("active") == false) {
+            filterButtons[j].style.backgroundColor = "lightgray";
+        }
+    }
+}
+
+
+
 
 // Program filter subject functions
 function filterDesign(results) {
