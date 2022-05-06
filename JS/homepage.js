@@ -1,5 +1,6 @@
 //function for building menu
 
+let body = document.querySelector("body");
 let menu = document.getElementById("menu");
 let background = document.getElementById("background");
 
@@ -70,7 +71,7 @@ function setBackground () {
     var d = new Date();
     var hours = d.getHours();
 
-    if (hours >= 18 && hours <= 7) {
+    if (hours <= 18 && hours >= 7) {
         bgDiv.innerHTML = `<img src="../Images/Startpage_GIFs/day.gif">`
     } else {
         bgDiv.innerHTML =`<img src="../Images/Startpage_GIFs/night.gif">`
@@ -80,6 +81,28 @@ function setBackground () {
 
 }
 
+function setBgShape () {
+
+    let bgShape = document.createElement("div");
+
+    bgShape.classList.add("bgShape");
+
+    body.appendChild(bgShape);
+
+}
+
+function setIcon () {
+    let icon = document.createElement("div");
+
+    icon.classList.add("icon");
+
+    body.appendChild(icon);
+}
+
 buildMenu()
 
 setBackground();
+
+setBgShape();
+
+setIcon();
