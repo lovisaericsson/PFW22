@@ -18,7 +18,7 @@ let medicineBtn = document.getElementById("medicineBtn");
 let sociologyBtn = document.getElementById("sociologyBtn");
 
 
-// Event handlers for country, city, programme buttons
+// Event handlers for country, city, programme, filter buttons
 function addEventHandlers() {
     countryBtn.addEventListener("click", function () {
         countryBtn.classList.toggle("active");
@@ -122,28 +122,35 @@ function getAllProgrammes() {
 
 //Toggle results for each category (COUNTRIES, CITIES, PROGRAMMES)
 function toggleOptions() {
-
     let results = [];
 
+    // If country is toggled, get all countries
     if (countryBtn.classList.contains("active") == true) {
         results = [...getAllCountries()]
     }
 
+    // If city is toggled, get all cities
     if (cityBtn.classList.contains("active") == true) {
         results = [...results, ...getAllCities()]
     }
 
+    // If programme is toggled...
     if (programmeBtn.classList.contains("active") == true) {
+        programmeBtn.style.backgroundColor = "darkgray"; //decide on color later
+        //...show filter
         filter.classList.remove("no-display");
+        // If filter btn is untoggled, dont show filters
         if (filterBtn.classList.contains("active") == false) {
             filterDropdown.classList.add("no-display");
             filterBtn.style.backgroundImage = "url('../Images/arrow-up.png')";
         }
+        // If filter btn is toggled, show filters
         if (filterBtn.classList.contains("active") == true) {
             filterDropdown.classList.remove("no-display");
             filterBtn.style.backgroundImage = "url('../Images/arrow-down.png')";
         }
 
+        // Calls programs function and filters the programs in turn
         results = [...results, ...getAllProgrammes()]
         results = [...filterDesign(results)]
         results = [...filterTech(results)]
@@ -154,65 +161,71 @@ function toggleOptions() {
         results = [...filterSociology(results)]
     }
 
+    // If programme is not toggled, dont show filters
     if (programmeBtn.classList.contains("active") == false) {
+        programmeBtn.style.backgroundColor = "lightgray"; //decide on color later
         filter.classList.add("no-display");
     }
 
+    // If nothing is toggled, show all
     if (results.length == 0) {
         results = [...getAllCountries(), ...getAllCities(), ...getAllProgrammes()]
     }
-    console.log(results);
+
     return results;
 }
 
+// Program filter functions
 function filterDesign(results) {
+    // If button is not toggled, the belonging subject results will not show
     if (designBtn.classList.contains("active") == !false) {
         results = results.filter((result) => result.subjectID !== 6);
     }
     return results;
 }
-
 function filterTech(results) {
+    // If button is not toggled, the belonging subject results will not show
     if (techBtn.classList.contains("active") == !false) {
         results = results.filter((result) => result.subjectID !== 1);
     }
     return results;
 }
-
 function filterMath(results) {
+    // If button is not toggled, the belonging subject results will not show
     if (mathBtn.classList.contains("active") == !false) {
         results = results.filter((result) => result.subjectID !== 0);
     }
     return results;
 }
-
 function filterLaw(results) {
+    // If button is not toggled, the belonging subject results will not show
     if (lawBtn.classList.contains("active") == !false) {
         results = results.filter((result) => result.subjectID !== 2);
     }
     return results;
 }
-
 function filterFilo(results) {
+    // If button is not toggled, the belonging subject results will not show
     if (filoBtn.classList.contains("active") == !false) {
         results = results.filter((result) => result.subjectID !== 5);
     }
     return results;
 }
-
 function filterMedicine(results) {
+    // If button is not toggled, the belonging subject results will not show
     if (medicineBtn.classList.contains("active") == !false) {
         results = results.filter((result) => result.subjectID !== 3);
     }
     return results;
 }
-
 function filterSociology(results) {
+    // If button is not toggled, the belonging subject results will not show
     if (sociologyBtn.classList.contains("active") == !false) {
         results = results.filter((result) => result.subjectID !== 4);
     }
     return results;
 }
+
 //Direct code
 addEventHandlers()
 toggleOptions()
