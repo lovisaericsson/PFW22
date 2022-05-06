@@ -1,40 +1,43 @@
 "use strict";
 
 //Search function
-
 let countryBtn = document.getElementById("countries-btn");
 let cityBtn = document.getElementById("cities-btn");
 let programmeBtn = document.getElementById("courses-btn");
+let filter = document.querySelector(".filterprogram");
+let filterDropdown = document.querySelector(".filters-dropdown")
+let filterBtn = document.querySelector(".filter-program-btn")
+
 
 // Event handlers for country, city, programme buttons
 function addEventHandlers() {
-
     countryBtn.addEventListener("click", function () {
         countryBtn.classList.toggle("active");
+        toggleOptions();
     })
-
     cityBtn.addEventListener("click", function () {
         cityBtn.classList.toggle("active");
+        toggleOptions();
     })
-
     programmeBtn.addEventListener("click", function () {
         programmeBtn.classList.toggle("active");
+        toggleOptions();
     })
+    filterBtn.addEventListener("click", function () {
+        filterBtn.classList.toggle("active");
+        toggleOptions();
+    })
+
 }
 
-function getResults() {
+// //Untoggled fetch results for each category (COUNTRIES, CITIES, PROGRAMMES)
+// function unToggled() {
+//     const DATABASE = [];
 
-}
+//     DATABASE.push(COUNTRIES, CITIES, PROGRAMMES)
 
-//Untoggled fetch results for each category (COUNTRIES, CITIES, PROGRAMMES)
-
-function unToggled() {
-    const DATABASE = [];
-
-    DATABASE.push(COUNTRIES, CITIES, PROGRAMMES)
-
-    return DATABASE;
-}
+//     return DATABASE;
+// }
 
 // Stores ALL countries in an array
 function getAllCountries() {
@@ -86,7 +89,22 @@ function toggleOptions() {
     }
 
     if (programmeBtn.classList.contains("active") == true) {
+        filter.classList.remove("no-display");
+        if (filterBtn.classList.contains("active") == false) {
+            filterDropdown.classList.add("no-display");
+            filterBtn.style.backgroundImage = "url('../Images/arrow-up.png')";
+        }
+        if (filterBtn.classList.contains("active") == true) {
+            filterDropdown.classList.remove("no-display");
+            filterBtn.style.backgroundImage = "url('../Images/arrow-down.png')";
+        }
+
         results = [...results, ...getAllProgrammes()]
+        // filterSubjects(results)
+    }
+
+    if (programmeBtn.classList.contains("active") == false) {
+        filter.classList.add("no-display");
     }
 
     if (results.length == 0) {
@@ -96,6 +114,7 @@ function toggleOptions() {
     return results;
 }
 
-//Direct code
 
+//Direct code
 addEventHandlers()
+toggleOptions()
