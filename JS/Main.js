@@ -171,60 +171,63 @@ function toggleOptions() {
     if (results.length == 0) {
         results = [...getAllCountries(), ...getAllCities(), ...getAllProgrammes()]
     }
-
+    console.log(results)
     return results;
 }
 
-// Program filter functions
+// Program filter subject functions
 function filterDesign(results) {
     // If button is not toggled, the belonging subject results will not show
-    if (designBtn.classList.contains("active") == !false) {
+    if (designBtn.classList.contains("active") == false) {
         results = results.filter((result) => result.subjectID !== 6);
     }
     return results;
 }
 function filterTech(results) {
     // If button is not toggled, the belonging subject results will not show
-    if (techBtn.classList.contains("active") == !false) {
+    if (techBtn.classList.contains("active") == false) {
         results = results.filter((result) => result.subjectID !== 1);
     }
     return results;
 }
 function filterMath(results) {
     // If button is not toggled, the belonging subject results will not show
-    if (mathBtn.classList.contains("active") == !false) {
+    if (mathBtn.classList.contains("active") == false) {
         results = results.filter((result) => result.subjectID !== 0);
     }
     return results;
 }
 function filterLaw(results) {
     // If button is not toggled, the belonging subject results will not show
-    if (lawBtn.classList.contains("active") == !false) {
+    if (lawBtn.classList.contains("active") == false) {
         results = results.filter((result) => result.subjectID !== 2);
     }
     return results;
 }
 function filterFilo(results) {
     // If button is not toggled, the belonging subject results will not show
-    if (filoBtn.classList.contains("active") == !false) {
+    if (filoBtn.classList.contains("active") == false) {
         results = results.filter((result) => result.subjectID !== 5);
     }
     return results;
 }
 function filterMedicine(results) {
     // If button is not toggled, the belonging subject results will not show
-    if (medicineBtn.classList.contains("active") == !false) {
+    if (medicineBtn.classList.contains("active") == false) {
         results = results.filter((result) => result.subjectID !== 3);
     }
     return results;
 }
 function filterSociology(results) {
     // If button is not toggled, the belonging subject results will not show
-    if (sociologyBtn.classList.contains("active") == !false) {
+    if (sociologyBtn.classList.contains("active") == false) {
         results = results.filter((result) => result.subjectID !== 4);
     }
     return results;
 }
+
+
+
 
 //Direct code
 addEventHandlers()
