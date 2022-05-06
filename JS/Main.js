@@ -5,7 +5,7 @@ let countryBtn = document.getElementById("countries-btn");
 let cityBtn = document.getElementById("cities-btn");
 let programmeBtn = document.getElementById("courses-btn");
 
-// Filter buttons
+// Filter subject buttons
 let filter = document.querySelector(".filterprogram");
 let filterDropdown = document.querySelector(".filters-dropdown")
 let filterBtn = document.querySelector(".filter-program-btn")
@@ -33,7 +33,7 @@ function addEventHandlers() {
         toggleOptions();
     })
 
-    //Filter handlers
+    //Filter subject handlers
     filterBtn.addEventListener("click", function () {
         filterBtn.classList.toggle("active");
         toggleOptions();
@@ -71,6 +71,22 @@ function addEventHandlers() {
 
     sociologyBtn.addEventListener("click", function () {
         sociologyBtn.classList.toggle("active");
+        toggleOptions();
+    })
+
+    // Filter level handlers
+    bachelorsBtn.addEventListener("click", function () {
+        bachelorsBtn.classList.toggle("active");
+        toggleOptions();
+    })
+
+    mastersBtn.addEventListener("click", function () {
+        mastersBtn.classList.toggle("active");
+        toggleOptions();
+    })
+
+    doctorateBtn.addEventListener("click", function () {
+        doctorateBtn.classList.toggle("active");
         toggleOptions();
     })
 }
@@ -225,9 +241,6 @@ function filterSociology(results) {
     }
     return results;
 }
-
-
-
 
 //Direct code
 addEventHandlers()
