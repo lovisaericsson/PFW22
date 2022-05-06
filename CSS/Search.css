@@ -21,7 +21,6 @@
     border: none;
     text-align: center;
     font-size: 5vw;
-    background-color: rgb(135, 135, 135);
     color: white;
 }
 
@@ -49,7 +48,6 @@
     outline: none;
     text-align: left;
     font-size: 5vw;
-    background-color: rgb(135, 135, 135);
     color: white;
     background-size: 10vw;
     background-repeat: no-repeat;

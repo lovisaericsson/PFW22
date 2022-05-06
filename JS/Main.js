@@ -147,7 +147,6 @@ function toggleOptions() {
 
     // If programme is toggled...
     if (programmeBtn.classList.contains("active") == true) {
-        programmeBtn.style.backgroundColor = "darkgray"; //decide on color later
         //...show filter
         filter.classList.remove("no-display");
         // If filter btn is untoggled, dont show filters
@@ -186,7 +185,6 @@ function toggleOptions() {
 
     // If programme is not toggled, dont show filters
     if (programmeBtn.classList.contains("active") == false) {
-        programmeBtn.style.backgroundColor = "lightgray"; //decide on color later
         filter.classList.add("no-display");
     }
 
@@ -214,6 +212,7 @@ function toggleColors() {
     // Colors for filter subject and level
     let filterButtons = [designBtn, techBtn, mathBtn, lawBtn, filoBtn, medicineBtn,
         sociologyBtn, bachelorsBtn, mastersBtn, doctorateBtn];
+
     for (let j = 0; j < filterButtons.length; j++) {
         // If active, background color is darkgray
         if (filterButtons[j].classList.contains("active") == true) {
