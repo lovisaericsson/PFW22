@@ -51,10 +51,10 @@
     font-size: 5vw;
     background-color: rgb(135, 135, 135);
     color: white;
-    background-image: url(../Images/arrow-up.png);
     background-size: 10vw;
     background-repeat: no-repeat;
     background-position: 98% 50%;
+    /* Arrow image is shown through JS */
 }
 
 .filter-heading {
@@ -92,4 +92,8 @@
     background-size: 5vw;
     background-repeat: no-repeat;
     background-position: 98% 50%;
+}
+
+.no-display {
+    display: none;
 }
