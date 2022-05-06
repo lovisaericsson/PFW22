@@ -4,9 +4,18 @@
 let countryBtn = document.getElementById("countries-btn");
 let cityBtn = document.getElementById("cities-btn");
 let programmeBtn = document.getElementById("courses-btn");
+
+// Filter buttons
 let filter = document.querySelector(".filterprogram");
 let filterDropdown = document.querySelector(".filters-dropdown")
 let filterBtn = document.querySelector(".filter-program-btn")
+let designBtn = document.getElementById("designBtn");
+let techBtn = document.getElementById("techBtn");
+let mathBtn = document.getElementById("mathBtn");
+let lawBtn = document.getElementById("lawBtn");
+let filoBtn = document.getElementById("filoBtn");
+let medicineBtn = document.getElementById("medicineBtn");
+let sociologyBtn = document.getElementById("sociologyBtn");
 
 
 // Event handlers for country, city, programme buttons
@@ -23,11 +32,47 @@ function addEventHandlers() {
         programmeBtn.classList.toggle("active");
         toggleOptions();
     })
+
+    //Filter handlers
     filterBtn.addEventListener("click", function () {
         filterBtn.classList.toggle("active");
         toggleOptions();
     })
 
+    designBtn.addEventListener("click", function () {
+        designBtn.classList.toggle("active");
+        toggleOptions();
+    })
+
+    techBtn.addEventListener("click", function () {
+        techBtn.classList.toggle("active");
+        toggleOptions();
+    })
+
+    mathBtn.addEventListener("click", function () {
+        mathBtn.classList.toggle("active");
+        toggleOptions();
+    })
+
+    lawBtn.addEventListener("click", function () {
+        lawBtn.classList.toggle("active");
+        toggleOptions();
+    })
+
+    filoBtn.addEventListener("click", function () {
+        filoBtn.classList.toggle("active");
+        toggleOptions();
+    })
+
+    medicineBtn.addEventListener("click", function () {
+        medicineBtn.classList.toggle("active");
+        toggleOptions();
+    })
+
+    sociologyBtn.addEventListener("click", function () {
+        sociologyBtn.classList.toggle("active");
+        toggleOptions();
+    })
 }
 
 // //Untoggled fetch results for each category (COUNTRIES, CITIES, PROGRAMMES)
@@ -100,7 +145,13 @@ function toggleOptions() {
         }
 
         results = [...results, ...getAllProgrammes()]
-        // filterSubjects(results)
+        results = [...filterDesign(results)]
+        results = [...filterTech(results)]
+        results = [...filterMath(results)]
+        results = [...filterLaw(results)]
+        results = [...filterFilo(results)]
+        results = [...filterMedicine(results)]
+        results = [...filterSociology(results)]
     }
 
     if (programmeBtn.classList.contains("active") == false) {
@@ -110,11 +161,58 @@ function toggleOptions() {
     if (results.length == 0) {
         results = [...getAllCountries(), ...getAllCities(), ...getAllProgrammes()]
     }
-
+    console.log(results);
     return results;
 }
 
+function filterDesign(results) {
+    if (designBtn.classList.contains("active") == !false) {
+        results = results.filter((result) => result.subjectID !== 6);
+    }
+    return results;
+}
 
+function filterTech(results) {
+    if (techBtn.classList.contains("active") == !false) {
+        results = results.filter((result) => result.subjectID !== 1);
+    }
+    return results;
+}
+
+function filterMath(results) {
+    if (mathBtn.classList.contains("active") == !false) {
+        results = results.filter((result) => result.subjectID !== 0);
+    }
+    return results;
+}
+
+function filterLaw(results) {
+    if (lawBtn.classList.contains("active") == !false) {
+        results = results.filter((result) => result.subjectID !== 2);
+    }
+    return results;
+}
+
+function filterFilo(results) {
+    if (filoBtn.classList.contains("active") == !false) {
+        results = results.filter((result) => result.subjectID !== 5);
+    }
+    return results;
+}
+
+function filterMedicine(results) {
+    if (medicineBtn.classList.contains("active") == !false) {
+        results = results.filter((result) => result.subjectID !== 3);
+    }
+    return results;
+}
+
+function filterSociology(results) {
+    if (sociologyBtn.classList.contains("active") == !false) {
+        results = results.filter((result) => result.subjectID !== 4);
+    }
+    return results;
+}
 //Direct code
 addEventHandlers()
 toggleOptions()
