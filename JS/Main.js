@@ -145,8 +145,13 @@ function toggleOptions() {
         results = [...results, ...getAllCities()]
     }
 
-    // If programme is toggled...
-    if (programmeBtn.classList.contains("active") == true) {
+    // If programme is not toggled, or if cities/cointries is toggled along with programme, get all programmes
+    if (programmeBtn.classList.contains("active") == true && (cityBtn.classList.contains("active") == true || countryBtn.classList.contains("active") == true)) {
+        results = [...results, ...getAllProgrammes()]
+    }
+
+    // If ONLY programme is toggled...
+    if (programmeBtn.classList.contains("active") == true && cityBtn.classList.contains("active") == false && countryBtn.classList.contains("active") == false) {
         //...show filter
         filter.classList.remove("no-display");
         // If filter btn is untoggled, dont show filters
@@ -183,8 +188,8 @@ function toggleOptions() {
 
     }
 
-    // If programme is not toggled, dont show filters
-    if (programmeBtn.classList.contains("active") == false) {
+    // If programme is not toggled, or if cities/cointries is toggled along with programme, dont show filters
+    if (programmeBtn.classList.contains("active") == false || (programmeBtn.classList.contains("active") == true && ((cityBtn.classList.contains("active") == true) || countryBtn.classList.contains("active") == true))) {
         filter.classList.add("no-display");
     }
 
@@ -193,7 +198,23 @@ function toggleOptions() {
         results = [...getAllCountries(), ...getAllCities(), ...getAllProgrammes()]
     }
     toggleColors();
+
+    // if search is not empty 
+
+    if (getInputValue() !== 0) {
+        results = results.filter((result) => result.name.toLowerCase().includes(getInputValue()));
+    }
+
+    // If result.name includes search value
+
+
+
+
     console.log(results);
+
+
+
+
     return results;
 }
 
@@ -297,6 +318,13 @@ function filterDoctorate(results) {
     }
     return results;
 }
+
+// Get input value
+function getInputValue() {
+    let inputValue = document.getElementById("inputfield").value.toLowerCase();
+    return inputValue;
+}
+
 
 //Direct code
 addEventHandlers()
