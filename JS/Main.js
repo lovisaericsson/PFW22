@@ -209,7 +209,21 @@ function toggleOptions() {
 
 
 
-createDivs(results)
+
+    let wrapper = document.getElementById("results");
+    wrapper.innerHTML = ""
+    for (let j = 0; j < results.length; j++) {
+        if (results[j].languageID > 0) {
+            createDiv("country", results[j], wrapper)
+        }
+        else if (results[j].countryID > 0) {
+            createDiv("city", results[j], wrapper)
+        }
+        else if (results[j].universityID > 0) {
+            createDiv("program", results[j], wrapper)
+        }
+       
+    }
 
 
 
@@ -329,27 +343,19 @@ function getInputValue() {
 }
 
 // Create div 
-function createDiv(name) {
+function createDiv(typeDiv, result, wrapper) {
     let createDiv = document.createElement("div");
     createDiv.classList.add("box");
-    createDiv.innerHTML = name
+    createDiv.innerHTML = result.name
+    wrapper.appendChild(createDiv);
 
+    createDiv.addEventListener("click", function(){
+            console.log(createDiv)
+        })
     return createDiv
 }
 
-//Create div of all countires, cities and programmes  
-function createDivs (results) {
-    let wrapper = document.getElementById("results");
-    wrapper.innerHTML = ""
-    for ( let result of results) {
-        let boxDiv = createDiv(result.name);
-        wrapper.appendChild(boxDiv);
-        boxDiv.addEventListener("click", function(){
-            console.log(boxDiv)
-        })
-    }
 
-}
 
 //Direct code
 addEventHandlers()
