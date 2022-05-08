@@ -337,14 +337,18 @@ function createDiv(name) {
     return createDiv
 }
 
-//Create div of countries 
+//Create div of all countires, cities and programmes  
 function createDivs (results) {
     let wrapper = document.getElementById("results");
     wrapper.innerHTML = ""
     for ( let result of results) {
-        let conutryDiv = createDiv(result.name);
-        wrapper.appendChild(conutryDiv);
+        let boxDiv = createDiv(result.name);
+        wrapper.appendChild(boxDiv);
+        boxDiv.addEventListener("click", function(){
+            console.log(boxDiv)
+        })
     }
+
 }
 
 //Direct code
