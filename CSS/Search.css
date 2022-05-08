@@ -95,3 +95,11 @@
 .no-display {
     display: none;
 }
+
+.box {
+    background-color: grey;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    width: 30vw;
+}
