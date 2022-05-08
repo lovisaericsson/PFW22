@@ -27,24 +27,24 @@
             <div class="filters-dropdown no-display">
                 <h3 class="filter-heading">ÄMNEN</h3>
                 <div class="filter-subject-btns">
-                    <input type="button" class="subject-filter-btn" value="DESIGN">
-                    <input type="button" class="subject-filter-btn" value="TEKNIK">
+                    <input type="button" id="designBtn" class="subject-filter-btn" value="DESIGN">
+                    <input type="button" id="techBtn" class="subject-filter-btn" value="TEKNIK">
                     <input type="button" id="mathBtn" class="subject-filter-btn" value="MATTE">
-                    <input type="button" class="subject-filter-btn" value="JURIDIK">
-                    <input type="button" class="subject-filter-btn" value="HISTORIA">
-                    <input type="button" class="subject-filter-btn" value="MEDICIN">
-                    <input type="button" class="subject-filter-btn" value="SOCIOLOGI">
+                    <input type="button" id="lawBtn" class="subject-filter-btn" value="JURIDIK">
+                    <input type="button" id="filoBtn" class="subject-filter-btn" value="FILOSOFI">
+                    <input type="button" id="medicineBtn" class="subject-filter-btn" value="MEDICIN">
+                    <input type="button" id="sociologyBtn" class="subject-filter-btn" value="SOCIOLOGI">
                 </div>
                 <h3 class="filter-heading">NIVÅ</h3>
                 <div class="filter-level-btns">
-                    <input type="button" class="level-filter-btn" value="BACHELOR">
-                    <input type="button" class="level-filter-btn" value="MASTERS">
-                    <input type="button" class="level-filter-btn" value="DOCTORATE">
+                    <input type="button" id="bachelorsBtn" class="level-filter-btn" value="BACHELOR">
+                    <input type="button" id="mastersBtn" class="level-filter-btn" value="MASTERS">
+                    <input type="button" id="doctorateBtn" class="level-filter-btn" value="DOCTORATE">
                 </div>
             </div>
         </div>
         <div class="inputfield-container">
-            <input id="inputfield" type="text">
+            <input id="inputfield" type="text" oninput="toggleOptions()">
         </div>
     </form>
 
