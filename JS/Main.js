@@ -348,15 +348,39 @@ function createDiv(typeDiv, result, wrapper) {
     createDiv.classList.add("box");
     createDiv.innerHTML = result.name
     wrapper.appendChild(createDiv);
-
-    createDiv.addEventListener("click", function(){
-            console.log(createDiv)
+    
+    if(typeDiv == "country"){
+        let cities = getCitiesFromCountry(result.id);
+        console.log(result.id)
+        let divWithCities = createCityDivs(cities); 
+        createDiv.appendChild(divWithCities);
+    
+        createDiv.addEventListener("click", function(){
+            divWithCities.classList.toggle("city-result")
         })
+
+    }
+   
     return createDiv
 }
 
+function createCityDivs(cities){
+    let cityContainer = document.createElement("div");
+    cityContainer.classList.add("hidden-city-result");
 
+    for(let city of cities){
+        let cityDiv = document.createElement("div");
+        cityDiv.innerHTML = city.name
+        cityContainer.appendChild(cityDiv);
+    }
 
+    return cityContainer
+}
+
+function getCitiesFromCountry(id) {
+    let cities = CITIES.filter(city => city.countryID == id); 
+    return cities
+}
 //Direct code
 addEventHandlers()
 toggleOptions()
