@@ -209,7 +209,21 @@ function toggleOptions() {
 
 
 
-createDivs(results)
+
+    let wrapper = document.getElementById("results");
+    wrapper.innerHTML = ""
+    for (let j = 0; j < results.length; j++) {
+        if (results[j].languageID > 0) {
+            createDiv("country", results[j], wrapper)
+        }
+        else if (results[j].countryID > 0) {
+            createDiv("city", results[j], wrapper)
+        }
+        else if (results[j].universityID > 0) {
+            createDiv("program", results[j], wrapper)
+        }
+       
+    }
 
 
 
@@ -329,28 +343,44 @@ function getInputValue() {
 }
 
 // Create div 
-function createDiv(name) {
+function createDiv(typeDiv, result, wrapper) {
     let createDiv = document.createElement("div");
     createDiv.classList.add("box");
-    createDiv.innerHTML = name
+    createDiv.innerHTML = result.name
+    wrapper.appendChild(createDiv);
+    
+    if(typeDiv == "country"){
+        let cities = getCitiesFromCountry(result.id);
+        console.log(result.id)
+        let divWithCities = createCityDivs(cities); 
+        createDiv.appendChild(divWithCities);
+    
+        createDiv.addEventListener("click", function(){
+            divWithCities.classList.toggle("city-result")
+        })
 
+    }
+   
     return createDiv
 }
 
-//Create div of all countires, cities and programmes  
-function createDivs (results) {
-    let wrapper = document.getElementById("results");
-    wrapper.innerHTML = ""
-    for ( let result of results) {
-        let boxDiv = createDiv(result.name);
-        wrapper.appendChild(boxDiv);
-        boxDiv.addEventListener("click", function(){
-            console.log(boxDiv)
-        })
+function createCityDivs(cities){
+    let cityContainer = document.createElement("div");
+    cityContainer.classList.add("hidden-city-result");
+
+    for(let city of cities){
+        let cityDiv = document.createElement("div");
+        cityDiv.innerHTML = city.name
+        cityContainer.appendChild(cityDiv);
     }
 
+    return cityContainer
 }
 
+function getCitiesFromCountry(id) {
+    let cities = CITIES.filter(city => city.countryID == id); 
+    return cities
+}
 //Direct code
 addEventHandlers()
 toggleOptions()
