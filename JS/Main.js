@@ -26,7 +26,7 @@ let doctorateBtn = document.getElementById("doctorateBtn");
 function addEventHandlers() {
     countryBtn.addEventListener("click", function () {
         countryBtn.classList.toggle("active");
-        toggleOptions();
+       toggleOptions();
     })
     cityBtn.addEventListener("click", function () {
         cityBtn.classList.toggle("active");
@@ -209,6 +209,9 @@ function toggleOptions() {
 
 
 
+createDivs(results)
+
+
 
     console.log(results);
 
@@ -325,6 +328,28 @@ function getInputValue() {
     return inputValue;
 }
 
+// Create div 
+function createDiv(name) {
+    let createDiv = document.createElement("div");
+    createDiv.classList.add("box");
+    createDiv.innerHTML = name
+
+    return createDiv
+}
+
+//Create div of all countires, cities and programmes  
+function createDivs (results) {
+    let wrapper = document.getElementById("results");
+    wrapper.innerHTML = ""
+    for ( let result of results) {
+        let boxDiv = createDiv(result.name);
+        wrapper.appendChild(boxDiv);
+        boxDiv.addEventListener("click", function(){
+            console.log(boxDiv)
+        })
+    }
+
+}
 
 //Direct code
 addEventHandlers()
