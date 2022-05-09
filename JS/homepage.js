@@ -1,67 +1,108 @@
 //function for building menu
 
+let body = document.querySelector("body");
 let menu = document.getElementById("menu");
+let background = document.getElementById("background");
 
 const menuElements = [
 
     { //Home
         icon: "../Images/Icons/home.png",
         iconClicked: "../Images/Icons/home-clicked.png",
-        url: "Home.html" 
-        
+        url: "Home.html"
+
     },
 
     { //Search
         icon: "../Images/Icons/search.png",
         iconClicked: "../Images/Icons/search-clicked.png",
         url: "Search.html"
-        
+
     },
 
     { //Contact
-        icon: "../Images/Icons/about.png", //will be changed to @ sign
-        iconClicked: "../Images/Icons/about-clicked.png",
+        icon: "../Images/Icons/contact.png",
+        iconClicked: "../Images/Icons/about-clicked.png", //Will be changed to "clicked" mail
         url: "Contact.html"
-        
+
     },
 
     { //FAQ
         icon: "../Images/Icons/faq.png",
         iconClicked: "../Images/Icons/faq-clicked.png",
         url: "FAQ.html"
-        
+
     },
 ]
 
-function currentURL (filename) {
+// Checks is html-name is the same as image-name
+function check(i) {
     let path = window.location.pathname;
-    let page = path.split("/").pop();
+    let pagename = path.split("/").pop().split(".")[0].toLocaleLowerCase();
+    let image = menuElements[i].icon;
+    let imagename = image.split("/").pop().split(".")[0];
 
-
-    if (page == filename) {
-        return true;
-    } 
+    if (pagename == imagename) {
+        return true
+    }
 }
 
-function buildMenu () { 
-    
-    for (let i = 0 ; i < 4 ; i++) {
-
-        let checker = currentURL("Home.html");
-
-        let div = document.createElement("div"); 
-        if (checker == true) { // detta fungerar inte just nu, väljer inte enbart rätt div (alla)
+// Builds menu
+function buildMenu() {
+    for (let i = 0; i < 4; i++) {
+        let checker = check(i);
+        let div = document.createElement("div");
+        if (checker == true) {
             div.innerHTML = `<img src="${menuElements[i].iconClicked}">`
         } else {
             div.innerHTML = `<img src="${menuElements[i].icon}">`
         }
-        
         div.classList.add("menuElement");
         menu.appendChild(div);
+    }
+}
 
+
+function setBackground () {
+    
+    let bgDiv = document.createElement("div");
+    background.appendChild(bgDiv);
+
+    var d = new Date();
+    var hours = d.getHours();
+
+    if (hours <= 18 && hours >= 7) {
+        bgDiv.innerHTML = `<img src="../Images/Startpage_GIFs/day.gif">`
+    } else {
+        bgDiv.innerHTML =`<img src="../Images/Startpage_GIFs/night.gif">`
     }
 
+    bgDiv.classList.add("bgImage");
 
 }
 
+function setBgShape () {
+
+    let bgShape = document.createElement("div");
+
+    bgShape.classList.add("bgShape");
+
+    body.appendChild(bgShape);
+
+}
+
+function setIcon () {
+    let icon = document.createElement("div");
+
+    icon.classList.add("icon");
+
+    body.appendChild(icon);
+}
+
 buildMenu()
+
+setBackground();
+
+setBgShape();
+
+setIcon();
