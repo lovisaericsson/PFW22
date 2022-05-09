@@ -107,29 +107,35 @@ function renderQuestions(){
   let wrapper = document.getElementById("faq");
   wrapper.innerHTML = ""
   for (let j = 0; j < Questions.length; j++) {
-      createDiv(Questions[j].title, wrapper);
+      createDiv(Questions[j].title, Answers[j].title, wrapper);
     
   }
 }
 
-function createDiv(title, wrapper) {
+function createDiv(title,answer,wrapper) {
   let createDiv = document.createElement("div");
   createDiv.classList.add("box");
   createDiv.innerHTML = title
   wrapper.appendChild(createDiv);
   
-
-      /*let cities = getCitiesFromCountry(result.id);
-      console.log(result.id)
-      let divWithCities = createCityDivs(cities); 
-      createDiv.appendChild(divWithCities);
-  
-      createDiv.addEventListener("click", function(){
-          divWithCities.classList.toggle("city-result")
+  let divWithFaq = createAnswer(answer);
+  createDiv.appendChild(divWithFaq);
+  createDiv.addEventListener("click", function(){
+          divWithFaq.classList.toggle("answer-result")
+ 
       })
-*/
   
  
   return createDiv
+}
+
+function createAnswer(answer){
+  let answerContainer = document.createElement("div");
+  answerContainer.classList.add("hidden-answer-result");
+  let answerDiv = document.createElement("div");
+  answerDiv.innerHTML = answer
+  answerContainer.appendChild(answerDiv);
+
+return answerContainer
 }
 renderQuestions()
