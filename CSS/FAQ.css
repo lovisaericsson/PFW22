@@ -24,9 +24,9 @@ h1 {
     margin: 20px;
     border-radius: 10px;
     width: 80%;
-    font-size: 4.5vw;
+    font-size: 5vw;
     text-align:left;
-    
+  
 
     background-size: 10vw;
     background-repeat: no-repeat;
@@ -39,20 +39,14 @@ h1 {
 }
 
 .answer-result{
-    display: grid;
-    gap: 5px;
- 
-
+    gap: 4px; 
 }
 
 .answer-result > div{
-    padding-left: 10px;
-    border-radius: 10px;
-    background-color: rgba(191, 184, 175, 0.4);;
-    border: 0.5px solid black;
-    font-size: 10pt;
-    margin-top: 3vh;
-  
-
     
+    border-radius: 10px;
+    background-color: rgba(207, 204, 202, 0.4);;
+    font-size: 14px;
+    margin-top: 2vh;
+
 }
