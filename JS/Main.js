@@ -207,9 +207,7 @@ function toggleOptions() {
 
     // If result.name includes search value
 
-
-
-
+    //Build the search result with divs 
     let wrapper = document.getElementById("results");
     wrapper.innerHTML = ""
     for (let j = 0; j < results.length; j++) {
@@ -225,12 +223,7 @@ function toggleOptions() {
        
     }
 
-
-
     console.log(results);
-
-
-
 
     return results;
 }

@@ -102,3 +102,34 @@ const Answers = [
     "title": "Det är respektive college/universitets villkor som gäller för återbetalning och avgifter vid exempelvis avbokning och uppskjutande av studier och det är viktigt att du tar del av skolans villkor i samband med att du gör din ansökan. Vi försöker dock alltid hjälpa dig om det skulle uppstå några problem. Det är viktigt att du kontaktar oss så snart som möjligt i sådana fall."
     },
 ];
+
+function renderQuestions(){
+  let wrapper = document.getElementById("faq");
+  wrapper.innerHTML = ""
+  for (let j = 0; j < Questions.length; j++) {
+      createDiv(Questions[j].title, wrapper);
+    
+  }
+}
+
+function createDiv(title, wrapper) {
+  let createDiv = document.createElement("div");
+  createDiv.classList.add("box");
+  createDiv.innerHTML = title
+  wrapper.appendChild(createDiv);
+  
+
+      /*let cities = getCitiesFromCountry(result.id);
+      console.log(result.id)
+      let divWithCities = createCityDivs(cities); 
+      createDiv.appendChild(divWithCities);
+  
+      createDiv.addEventListener("click", function(){
+          divWithCities.classList.toggle("city-result")
+      })
+*/
+  
+ 
+  return createDiv
+}
+renderQuestions()
