@@ -52,9 +52,9 @@ function buildMenu() {
         let checker = check(i);
         let div = document.createElement("div");
         if (checker == true) {
-            div.innerHTML = `<img src="${menuElements[i].iconClicked}">`
+            div.innerHTML = `<a href="${menuElements[i].url}"> <img src="${menuElements[i].iconClicked}"> </a>`
         } else {
-            div.innerHTML = `<img src="${menuElements[i].icon}">`
+            div.innerHTML = `<a href="${menuElements[i].url}"> <img src="${menuElements[i].icon}"> </a>`
         }
         div.classList.add("menuElement");
         menu.appendChild(div);
