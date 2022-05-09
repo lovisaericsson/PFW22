@@ -103,11 +103,12 @@
     border-radius: 10px;
     width: 80%;
     font-size: 5vw;
-    text-align: center;
+    text-align: left;
 }
 
 .hidden-city-result{
     display: none;
+    margin-top: 2vh;
 }
 
 .city-result{
@@ -120,9 +121,10 @@
 .city-result > div{
     padding-left: 10px;
     border-radius: 10px;
-    background-color: rgba(191, 184, 175, 0.4);;
-    border: 0.5px solid black;
-    font-size: 10pt;
+    margin-bottom: 2vh;
+    background-color: rgb(251, 242, 242);
+    text-align: left;
+    font-size: 12pt;
     padding-bottom: 10px;
     padding-top: 10px;
 }
