@@ -27,18 +27,14 @@ h1 {
     font-size: 5vw;
     text-align:left;
   
-
-    background-size: 10vw;
-    background-repeat: no-repeat;
-    background-position: 100% 70%;
 }
-
 
 .hidden-answer-result{
     display: none;
 }
 
 .answer-result{
+    display: grid;
     gap: 4px; 
 }
 
