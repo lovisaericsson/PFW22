@@ -121,9 +121,9 @@ function createDiv(title,answer,wrapper) {
   let divWithFaq = createAnswer(answer);
   createDiv.appendChild(divWithFaq);
   createDiv.addEventListener("click", function(){
-          divWithFaq.classList.toggle("answer-result")
- 
-      })
+          divWithFaq.classList.toggle("answer-result");
+
+  })
   
  
   return createDiv
