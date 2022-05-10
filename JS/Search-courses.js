@@ -22,6 +22,41 @@ function getProgramLevel (result) {
     return programLevel;
 }
 
+function getProgramLocation (result) {
+
+    let programCity = [];
+    let programCountry = [];
+    let programLocation = [];
+
+    for (let university of UNIVERSITIES) {
+        if (result.universityID == university.id) {
+            for (let city of CITIES) {
+                if (university.cityID == city.id) {
+                    programCity.push(city.name)
+                }
+            }
+        }
+    }
+
+    for (let university of UNIVERSITIES) {
+        if (result.universityID == university.id) {
+            for (let city of CITIES) {
+                if (university.cityID == city.id) {
+                    for (let country of COUNTRIES) {
+                        if (city.countryID == country.id) {
+                            programCountry.push(country.name);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    programLocation.push(programCity + ", " + programCountry)
+    
+    return programLocation;
+}
+
 function mapProgramById (result) {
 
     let ratedProgram = [];
