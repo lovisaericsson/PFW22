@@ -7,7 +7,17 @@ function getProgramLevel () /* with parameter from search result? */ {
     let programLevel = [];
 
     for (let program of PROGRAMMES) {
-        programLevel.push(program.level);
+        if (program.level == 0) {
+            programLevel.push(LEVELS[0])
+        }
+
+        if (program.level == 1) {
+            programLevel.push(LEVELS[1])
+        }
+
+        if (program.level == 2) {
+            programLevel.push(LEVELS[2])
+        };
     }
 
     return programLevel;
