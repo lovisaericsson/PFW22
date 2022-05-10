@@ -99,10 +99,13 @@ function setIcon () {
     body.appendChild(icon);
 }
 
-buildMenu()
+function runBackground () {
 
-setBackground();
+    setBackground();
+    setBgShape();
+    setIcon();
+}
 
-setBgShape();
+buildMenu();
 
-setIcon();
+runBackground();
