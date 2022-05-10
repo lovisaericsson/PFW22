@@ -1,5 +1,7 @@
 "use strict";
 
+let wrapper = document.getElementById("results");
+
 //Search function
 let countryBtn = document.getElementById("countries-btn");
 let cityBtn = document.getElementById("cities-btn");
@@ -136,9 +138,11 @@ function renderResults() {
     sortAlphabetical(results);
 
     //Build the search result with divs 
-    let wrapper = document.getElementById("results");
     wrapper.innerHTML = ""
     for (let j = 0; j < results.length; j++) {
+        if (j != 0 && j % 5 == 0) {
+            renderAdvertisement()
+        }
         if ("languageID" in results[j]) {
             createDiv("country", results[j], wrapper)
         }
@@ -150,8 +154,20 @@ function renderResults() {
         }
 
     }
-    // 
 
+}
+
+function renderAdvertisement() {
+    let div = document.createElement("div");
+    div.classList.add("ad");
+    div.style.backgroundImage = `url("../Advertising-images/${randomizeAdNumber()}.png")`;
+    wrapper.appendChild(div);
+}
+
+function randomizeAdNumber() {
+    let nr = Math.floor(Math.random() * 11) + 1;
+    console.log(nr);
+    return nr
 }
 
 
