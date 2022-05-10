@@ -26,72 +26,72 @@ let doctorateBtn = document.getElementById("doctorateBtn");
 function addEventHandlers() {
     countryBtn.addEventListener("click", function () {
         countryBtn.classList.toggle("active");
-       toggleOptions();
+        renderResults();
     })
     cityBtn.addEventListener("click", function () {
         cityBtn.classList.toggle("active");
-        toggleOptions();
+        renderResults();
     })
     programmeBtn.addEventListener("click", function () {
         programmeBtn.classList.toggle("active");
-        toggleOptions();
+        renderResults();
     })
 
     //Filter subject handlers
     filterBtn.addEventListener("click", function () {
         filterBtn.classList.toggle("active");
-        toggleOptions();
+        renderResults();
     })
 
     designBtn.addEventListener("click", function () {
         designBtn.classList.toggle("active");
-        toggleOptions();
+        renderResults();
     })
 
     techBtn.addEventListener("click", function () {
         techBtn.classList.toggle("active");
-        toggleOptions();
+        renderResults();
     })
 
     mathBtn.addEventListener("click", function () {
         mathBtn.classList.toggle("active");
-        toggleOptions();
+        renderResults();
     })
 
     lawBtn.addEventListener("click", function () {
         lawBtn.classList.toggle("active");
-        toggleOptions();
+        renderResults();
     })
 
     filoBtn.addEventListener("click", function () {
         filoBtn.classList.toggle("active");
-        toggleOptions();
+        renderResults();
     })
 
     medicineBtn.addEventListener("click", function () {
         medicineBtn.classList.toggle("active");
-        toggleOptions();
+        renderResults();
     })
 
     sociologyBtn.addEventListener("click", function () {
         sociologyBtn.classList.toggle("active");
-        toggleOptions();
+        renderResults();
     })
 
     // Filter level handlers
     bachelorsBtn.addEventListener("click", function () {
         bachelorsBtn.classList.toggle("active");
-        toggleOptions();
+        renderResults();
     })
 
     mastersBtn.addEventListener("click", function () {
         mastersBtn.classList.toggle("active");
-        toggleOptions();
+        renderResults();
     })
 
     doctorateBtn.addEventListener("click", function () {
         doctorateBtn.classList.toggle("active");
-        toggleOptions();
+        renderResults();
     })
 }
 
@@ -130,6 +130,30 @@ function getAllProgrammes() {
 
     return allProgrammes;
 }
+
+function renderResults() {
+    let results = toggleOptions();
+    sortAlphabetical(results);
+
+    //Build the search result with divs 
+    let wrapper = document.getElementById("results");
+    wrapper.innerHTML = ""
+    for (let j = 0; j < results.length; j++) {
+        if ("languageID" in results[j]) {
+            createDiv("country", results[j], wrapper)
+        }
+        if ("countryID" in results[j]) {
+            createDiv("city", results[j], wrapper)
+        }
+        if ("universityID" in results[j]) {
+            createDiv("program", results[j], wrapper)
+        }
+
+    }
+    // 
+
+}
+
 
 //Toggle results for each category (COUNTRIES, CITIES, PROGRAMMES)
 function toggleOptions() {
@@ -205,26 +229,7 @@ function toggleOptions() {
         results = results.filter((result) => result.name.toLowerCase().includes(getInputValue()));
     }
 
-    // If result.name includes search value
-
-    //Build the search result with divs 
-    let wrapper = document.getElementById("results");
-    wrapper.innerHTML = ""
-    for (let j = 0; j < results.length; j++) {
-        if (results[j].languageID > 0) {
-            createDiv("country", results[j], wrapper)
-        }
-        else if (results[j].countryID > 0) {
-            createDiv("city", results[j], wrapper)
-        }
-        else if (results[j].universityID > 0) {
-            createDiv("program", results[j], wrapper)
-        }
-       
-    }
-
     console.log(results);
-
     return results;
 }
 
@@ -335,33 +340,45 @@ function getInputValue() {
     return inputValue;
 }
 
+function sortAlphabetical(result) {
+    result.sort(function (a, b) {
+        if (a.name > b.name) {
+            return 1;
+        }
+        if (a.name < b.name) {
+            return -1;
+        }
+        return 0;
+    })
+    return result
+}
+
 // Create div 
 function createDiv(typeDiv, result, wrapper) {
     let createDiv = document.createElement("div");
     createDiv.classList.add("box");
     createDiv.innerHTML = result.name
     wrapper.appendChild(createDiv);
-    
-    if(typeDiv == "country"){
+
+    if (typeDiv == "country") {
         let cities = getCitiesFromCountry(result.id);
-        console.log(result.id)
-        let divWithCities = createCityDivs(cities); 
+        let divWithCities = createCityDivs(cities);
         createDiv.appendChild(divWithCities);
-    
-        createDiv.addEventListener("click", function(){
+
+        createDiv.addEventListener("click", function () {
             divWithCities.classList.toggle("city-result")
         })
 
     }
-   
+
     return createDiv
 }
 
-function createCityDivs(cities){
+function createCityDivs(cities) {
     let cityContainer = document.createElement("div");
     cityContainer.classList.add("hidden-city-result");
 
-    for(let city of cities){
+    for (let city of cities) {
         let cityDiv = document.createElement("div");
         cityDiv.innerHTML = city.name
         cityContainer.appendChild(cityDiv);
@@ -371,9 +388,9 @@ function createCityDivs(cities){
 }
 
 function getCitiesFromCountry(id) {
-    let cities = CITIES.filter(city => city.countryID == id); 
+    let cities = CITIES.filter(city => city.countryID == id);
     return cities
 }
 //Direct code
 addEventHandlers()
-toggleOptions()
+renderResults()
