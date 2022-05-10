@@ -1,38 +1,26 @@
 "use strict";
 
-//Get the program level of each program
+//Get the program level of each program, VERY general - can be substituted with "result" parameter and be used instead 
+//of for loop and have result.level instead of program.level
 
-function getProgramLevel () /* with parameter from search result? */ {
+function getProgramLevel (result) {
 
     let programLevel = [];
 
-    for (let program of PROGRAMMES) {
-        if (program.level == 0) {
+        if (result.level == 0) {
             programLevel.push(LEVELS[0])
         }
 
-        if (program.level == 1) {
+        if (result.level == 1) {
             programLevel.push(LEVELS[1])
         }
 
-        if (program.level == 2) {
+        if (result.level == 2) {
             programLevel.push(LEVELS[2])
         };
-    }
 
     return programLevel;
 }
-
-// function getEachProgramReview () {
-
-//     let programReviews = [];
-
-//    for (let comment of COMMENTS_PROGRAMME) {
-//            programReviews.push(comment.stars.courses);
-//    }
-   
-//     return programReviews;
-// }
 
 function mapProgramById (result) {
 
