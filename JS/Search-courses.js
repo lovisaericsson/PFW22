@@ -39,6 +39,17 @@ function mapProgramById (result) {
 
     return Math.round(averageScore * 10) / 10;
 
-    //arr.reduce((a, b) => a + b, 0) / arr.length
+}
 
+function getProgramSubject (result) {
+
+    let programSubject = [];
+
+    for (let field of FIELDS) {
+        if (result.subjectID == field.id) {
+            programSubject.push(field.name);
+        }
+    }
+
+    return programSubject;
 }
