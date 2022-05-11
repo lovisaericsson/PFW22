@@ -408,14 +408,17 @@ function createDiv(typeDiv, result, wrapper) {
         programName.innerHTML = result.name;
         createDiv.appendChild(programName);
 
+
         let bottomTag = document.createElement("div");
         bottomTag.innerHTML = `<img src="../Images/Icons/marker.png"> ${location}`
         createDiv.appendChild(bottomTag);
         bottomTag.classList.add("bottomTag");
 
-        createDiv.addEventListener("click", function(){
-            programName.classList.toggle("program-result")
-        })
+        //let divWithProgrammes = createProgramDivs(locations);
+        
+        //createDiv.addEventListener("click", function () {
+         //   divWithProgrammes.classList.toggle("program-result")
+        //})
 
     }
 
@@ -435,13 +438,13 @@ function createCityDivs(cities) {
     return cityContainer
 }
 
-function createProgramDivs(programs){
+function createProgramDivs(locations){
     let programContainer = document.createElement("div");
     programContainer.classList.add("hidden-program-result");
 
-    for(let program of programs) {
-        let programDiv = document.createElement("div");
-        programDiv.innerHTML = program.name
+    for(let location of locations) {
+        let locationDiv = document.createElement("div");
+        locationDiv.innerHTML = program.name
         programContainer.appendChild(programDiv);
     }
 
@@ -451,6 +454,11 @@ function createProgramDivs(programs){
 function getCitiesFromCountry(id) {
     let cities = CITIES.filter(city => city.countryID == id);
     return cities
+}
+
+function getInfoFromProgram(id) {
+    let program = PROGRAMMES.filter(program => program.id == id);
+    return program.name
 }
 //Direct code
 addEventHandlers()
