@@ -413,6 +413,10 @@ function createDiv(typeDiv, result, wrapper) {
         createDiv.appendChild(bottomTag);
         bottomTag.classList.add("bottomTag");
 
+        createDiv.addEventListener("click", function(){
+            programName.classList.toggle("program-result")
+        })
+
     }
 
     return createDiv
@@ -429,6 +433,19 @@ function createCityDivs(cities) {
     }
 
     return cityContainer
+}
+
+function createProgramDivs(programs){
+    let programContainer = document.createElement("div");
+    programContainer.classList.add("hidden-program-result");
+
+    for(let program of programs) {
+        let programDiv = document.createElement("div");
+        programDiv.innerHTML = program.name
+        programContainer.appendChild(programDiv);
+    }
+
+    return programContainer
 }
 
 function getCitiesFromCountry(id) {
