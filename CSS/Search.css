@@ -129,6 +129,23 @@
     padding-top: 10px;
 }
 
+.program-result{
+    display: grid;
+    grid-template-rows: repeat(4,1fr);
+    gap: 5px;
+}
+
+
+.program-result > div{
+    padding-left: 10px;
+    border-radius: 10px;
+    margin-bottom: 2vh;
+    background-color: rgb(251, 242, 242);
+    text-align: left;
+    font-size: 12pt;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
 .ad {
     background-color: #D0D0D0;
     padding: 20px;
