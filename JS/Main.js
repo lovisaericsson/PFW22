@@ -376,10 +376,10 @@ function sortAlphabetical(result) {
 function createDiv(typeDiv, result, wrapper) {
     let createDiv = document.createElement("div");
     createDiv.classList.add("box");
-    createDiv.innerHTML = result.name
     wrapper.appendChild(createDiv);
 
     if (typeDiv == "country") {
+        createDiv.innerHTML = result.name
         let cities = getCitiesFromCountry(result.id);
         let divWithCities = createCityDivs(cities);
         createDiv.appendChild(divWithCities);
@@ -387,6 +387,31 @@ function createDiv(typeDiv, result, wrapper) {
         createDiv.addEventListener("click", function () {
             divWithCities.classList.toggle("city-result")
         })
+    }
+
+    if (typeDiv == "city") {
+        createDiv.innerHTML = result.name
+    }
+
+    if (typeDiv == "program") {
+
+        let location = getProgramLocation(result);
+        let subject = getProgramSubject(result);
+        let level = getProgramLevel(result);
+        
+        let topTags = document.createElement("div");
+        topTags.innerHTML = `<p>${subject[0].toUpperCase()}</p> <p>${level[0].toUpperCase()}</p>`
+        createDiv.appendChild(topTags);
+        topTags.classList.add("topTag");
+
+        let programName = document.createElement("div");
+        programName.innerHTML = result.name;
+        createDiv.appendChild(programName);
+
+        let bottomTag = document.createElement("div");
+        bottomTag.innerHTML = `<img src="../Images/Icons/marker.png"> ${location}`
+        createDiv.appendChild(bottomTag);
+        bottomTag.classList.add("bottomTag");
 
     }
 
