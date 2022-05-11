@@ -1,0 +1,18 @@
+
+.menu {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    background-color: rgb(245, 245, 245);
+    z-index: 2;
+    position: absolute;
+}
+
+.menuElement img {
+    height: 10vw;
+    width: 10vw;
+}
+
+.menuElement {
+    padding: 20px;
+}
