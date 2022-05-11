@@ -140,6 +140,7 @@ function renderResults() {
     //Build the search result with divs 
     wrapper.innerHTML = ""
     for (let j = 0; j < results.length; j++) {
+        // Every five iterations, ads are rendered
         if (j != 0 && j % 5 == 0) {
             renderAdvertisement()
         }
@@ -157,6 +158,7 @@ function renderResults() {
 
 }
 
+// Renders a single ad
 function renderAdvertisement() {
     let div = document.createElement("div");
     div.classList.add("ad");
@@ -164,6 +166,7 @@ function renderAdvertisement() {
     wrapper.appendChild(div);
 }
 
+// Randomize a number from 1-11
 function randomizeAdNumber() {
     let nr = Math.floor(Math.random() * 11) + 1;
     console.log(nr);
