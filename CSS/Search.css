@@ -142,3 +142,26 @@
     background-repeat: no-repeat;
     background-position: center;
 }
+
+.bottomTag img {
+    height: 20px;
+}
+
+.topTag {
+    display: flex;
+    gap: 5px;
+    margin: 0;
+}
+
+.topTag p {
+    margin: 0;
+    margin: 4px 4px 4px 0px;
+    padding: 7px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    background-color: gray;
+    color: white;
+    font-size: smaller;
+    font-weight: bold;
+}
