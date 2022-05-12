@@ -116,3 +116,144 @@ function getOutRating (result) {
 
         return cityEntertainment;
  }
+
+ function getMathPrograms (result) {
+
+    let mathProgramsInCity = [];
+
+    for (let university of UNIVERSITIES) {
+        if (result.id == university.cityID) {
+            
+            for (program of PROGRAMMES) {
+
+                if (university.id == program.universityID && program.subjectID == 0) {
+                    
+                    mathProgramsInCity.push(program)
+                }
+            }
+        }
+    }
+
+    return mathProgramsInCity;
+ }
+
+ function getTechnologyPrograms (result) {
+
+    let technologyProgramsInCity = [];
+
+    for (let university of UNIVERSITIES) {
+        if (result.id == university.cityID) {
+            
+            for (program of PROGRAMMES) {
+
+                if (university.id == program.universityID && program.subjectID == 1) {
+                    
+                    technologyProgramsInCity.push(program)
+                }
+            }
+        }
+    }
+
+    return technologyProgramsInCity;
+ }
+
+ function getLawPrograms (result) {
+
+    let lawProgramsInCity = [];
+
+    for (let university of UNIVERSITIES) {
+        if (result.id == university.cityID) {
+            
+            for (program of PROGRAMMES) {
+
+                if (university.id == program.universityID && program.subjectID == 2) {
+                    
+                    lawProgramsInCity.push(program)
+                }
+            }
+        }
+    }
+
+    return lawProgramsInCity;
+ }
+
+ function getMedicinePrograms (result) {
+
+    let medicineProgramsInCity = [];
+
+    for (let university of UNIVERSITIES) {
+        if (result.id == university.cityID) {
+            
+            for (program of PROGRAMMES) {
+
+                if (university.id == program.universityID && program.subjectID == 3) {
+                    
+                    medicineProgramsInCity.push(program)
+                }
+            }
+        }
+    }
+
+    return medicineProgramsInCity;
+ }
+
+ function getSociologyPrograms (result) {
+
+    let sociologyProgramsInCity = [];
+
+    for (let university of UNIVERSITIES) {
+        if (result.id == university.cityID) {
+            
+            for (program of PROGRAMMES) {
+
+                if (university.id == program.universityID && program.subjectID == 4) {
+                    
+                    sociologyProgramsInCity.push(program)
+                }
+            }
+        }
+    }
+
+    return sociologyProgramsInCity;
+ }
+
+
+ function getPhilosophyPrograms (result) {
+
+    let philosophyProgramsInCity = [];
+
+    for (let university of UNIVERSITIES) {
+        if (result.id == university.cityID) {
+            
+            for (program of PROGRAMMES) {
+
+                if (university.id == program.universityID && program.subjectID == 5) {
+                    
+                    philosophyProgramsInCity.push(program)
+                }
+            }
+        }
+    }
+
+    return philosophyProgramsInCity;
+ }
+
+ function getDesignPrograms (result) {
+
+    let designProgramsInCity = [];
+
+    for (let university of UNIVERSITIES) {
+        if (result.id == university.cityID) {
+            
+            for (program of PROGRAMMES) {
+
+                if (university.id == program.universityID && program.subjectID == 6) {
+                    
+                    designProgramsInCity.push(program)
+                }
+            }
+        }
+    }
+
+    return designProgramsInCity;
+ }
