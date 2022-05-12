@@ -57,3 +57,41 @@ function getOutRating (result) {
     return Math.round(averageFoodRating * 10) / 10;
 
  }
+
+ //Fetches the city name
+
+ function getCityName (result) {
+
+    let cityName = ""
+
+    for (let city of CITIES) {
+
+        if (result.id == city.id) {
+
+            cityName += city.name;
+
+        }
+    }
+
+    return cityName;
+
+ }
+
+ //Fetches the city description ("about")
+
+ function getCityDescription (result) {
+
+    let cityDescription = ""
+
+    for (let city of CITIES) {
+
+        if (result.id == city.id) {
+
+            cityDescription += city.text;
+
+        }
+    }
+
+    return cityDescription;
+
+ }
