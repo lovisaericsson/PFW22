@@ -118,6 +118,28 @@ function getOutRating (result) {
         return cityEntertainment;
  }
 
+ function getCityPicturePath (result) {
+
+    let photoPath = "";
+
+    for (country of COUNTRIES) {
+
+        if (result.countryID == country.id) {
+
+            for (image of country.imagesNormal) {
+                
+                if (image.includes("normal_2") == true) {
+
+                    photoPath += image;
+
+                }
+            }
+        }
+    }
+
+    return photoPath;
+ }
+
  //Fetches each city's (result) math programmes and returns an array with them
  function getMathPrograms (result) {
 
