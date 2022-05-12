@@ -126,3 +126,44 @@ function getProgramSubject (result) {
 
     return programSubject;
 }
+
+function getProgramLanguage (result) {
+
+    let programLanguage = "";
+
+    for (let program of PROGRAMMES) {
+
+        if (result.id == program.id) {
+
+            for (let language of LANGUAGES) {
+
+                if (result.language == language.id) {
+                   programLanguage += language.name
+                }
+            }
+        }
+    }
+
+    return programLanguage;
+}
+
+function getProgramUniversity (result) {
+
+    let programUniversity = "";
+
+    for (let program of PROGRAMMES) {
+
+        if (result.id == program.id) {
+
+            for (let university of UNIVERSITIES) {
+
+                if (result.universityID == university.id) {
+
+                    programUniversity += university.name;
+                }
+            }
+        }
+    }
+
+    return programUniversity;
+}
