@@ -5,7 +5,8 @@
     width: 100%;
     background-color: rgb(245, 245, 245);
     z-index: 2;
-    position: absolute;
+    position: fixed;
+    bottom: 0;
 }
 
 .menuElement img {
@@ -15,4 +16,16 @@
 
 .menuElement {
     padding: 20px;
+}
+
+#results {
+    margin-bottom: 100px;
+}
+
+.contact-wrapper {
+    margin-bottom: 100px;
+}
+
+#faq {
+    margin-bottom: 100px;
 }
