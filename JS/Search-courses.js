@@ -170,7 +170,6 @@ function getProgramUniversity(result) {
 
 // Creates a div with a single star
 function createStar() {
-    let star = document.createElement("div");
-    star.innerHTML = `<img src="../Images/Icons/star.png"></img>`
-    document.querySelector("body").appendChild(star); // change append-"parent"
+    let star = `<img src="../Images/Icons/star.png"></img>`;
+    return star;
 }
