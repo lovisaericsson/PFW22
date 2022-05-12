@@ -76,6 +76,44 @@ function getProgramRatingAverage (result) {
 
 }
 
+function getTeachersRatingAverage (result) {
+
+    let ratedTeacher = []
+
+    for (let comment of COMMENTS_PROGRAMME) {
+        
+        if (result.id == comment.programmeID) {
+
+           ratedTeacher.push(comment.stars.teachers);
+            
+        }
+    }
+
+    let teacherAverageScore = ratedTeacher.reduce((a, b) => a + b, 0) / ratedTeacher.length;
+
+    return Math.round(teacherAverageScore * 10) / 10;
+
+}
+
+function getStudentsRatingAverage(result) {
+
+    let ratedStudent = []
+
+    for (let comment of COMMENTS_PROGRAMME) {
+        
+        if (result.id == comment.programmeID) {
+
+            ratedStudent.push(comment.stars.students);
+            
+        }
+    }
+
+    let studentAverageScore = ratedStudent.reduce((a, b) => a + b, 0) / ratedStudent.length;
+
+    return Math.round(studentAverageScore * 10) / 10;
+
+}
+
 function getProgramSubject (result) {
 
     let programSubject = [];
