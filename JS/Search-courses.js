@@ -167,3 +167,9 @@ function getProgramUniversity(result) {
 
     return programUniversity;
 }
+
+// Creates a div with a single star
+function createStar() {
+    let star = `<img src="../Images/Icons/star.png"></img>`;
+    return star;
+}
