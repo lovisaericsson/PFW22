@@ -398,32 +398,59 @@ function createDiv(typeDiv, result, wrapper) {
         let location = getProgramLocation(result);
         let subject = getProgramSubject(result);
         let level = getProgramLevel(result);
-        
+
+        // Top tags (subject, level)
         let topTags = document.createElement("div");
         topTags.innerHTML = `<p>${subject[0].toUpperCase()}</p> <p>${level[0].toUpperCase()}</p>`
         createDiv.appendChild(topTags);
         topTags.classList.add("topTag");
 
+        // Program name
         let programName = document.createElement("div");
         programName.innerHTML = result.name;
         createDiv.appendChild(programName);
 
-
+        // Bottom location tag
         let bottomTag = document.createElement("div");
         bottomTag.innerHTML = `<img src="../Images/Icons/marker.png"> ${location}`
         createDiv.appendChild(bottomTag);
         bottomTag.classList.add("bottomTag");
 
-        //let divWithProgrammes = createProgramDivs(locations);
-        
-        //createDiv.addEventListener("click", function () {
-         //   divWithProgrammes.classList.toggle("program-result")
-        //})
+        // Dropdown of program
+        let programDropDown = document.createElement("div");
+        programDropDown.innerHTML =
+            `<h2>${result.name.toUpperCase()}</h2>
+        <h3>TEACHERS:</h3>
+        <h3>STUDENTS:</h3>
+        <h3>COURSES:</h3>
+        <h3>LEVEL:</h3>
+        <br>
+        <h3>COUNTRY:</h3>
+        <h3>CITY:</h3>
+        <h3>LANGUAGE:</h3>
+        <h3>UNIVERSITY:</h3>
+        `
+        programDropDown.classList.add("program-dropdown");
+        programDropDown.classList.add("no-display");
+        createDiv.appendChild(programDropDown);
+        createDiv.addEventListener("click", function () {
+            programDropDown.classList.toggle("no-display");
+        })
+
+
+
+        // let divWithProgrammes = createProgramDivs(locations);
+
+        // createDiv.addEventListener("click", function () {
+        //     divWithProgrammes.classList.toggle("program-result")
+        // })
 
     }
 
     return createDiv
 }
+
+
 
 function createCityDivs(cities) {
     let cityContainer = document.createElement("div");
@@ -438,11 +465,11 @@ function createCityDivs(cities) {
     return cityContainer
 }
 
-function createProgramDivs(locations){
+function createProgramDivs(locations) {
     let programContainer = document.createElement("div");
     programContainer.classList.add("hidden-program-result");
 
-    for(let location of locations) {
+    for (let location of locations) {
         let locationDiv = document.createElement("div");
         locationDiv.innerHTML = program.name
         programContainer.appendChild(programDiv);

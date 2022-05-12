@@ -187,3 +187,23 @@
     font-size: smaller;
     font-weight: bold;
 }
+
+
+/* Program Dropdown */
+.program-dropdown {
+    background-color: white;
+    margin: 10px 0px 0px 0px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.program-dropdown > h2 {
+    text-align: center;
+    font-size: 4.5vw;
+}
+
+.program-dropdown > h3 {
+    margin: 5px 0px 0px 0px;
+    font-size: 4vw;
+
+}
