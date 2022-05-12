@@ -1,56 +1,59 @@
-/*
-
-let body = document.querySelector("body");
-
-function createPopUp () {
-
-    let div = document.createElement("div");
-    div.classList.add("popUp");
-
-    body.appendChild(div);
-    return div;
-
-}
-
-//Later! 
-//* Event listener för div onclick, open pop-up. 
-//* Event listener för krysset, close pop-up. 
-
-
-function calculateOutRating () {
-   let outStar = document.createElement("div");
-   //loop through stars/ratings + put in array
-   //Math.round till heltal 0-5
-
-   return outStar;
-}
-
-function calculateFoodRating () {
-
-    let foodStar = document.createElement("div");
-    //loop through stars/ratings + put in array
-    //Math.round till heltal 0-5
- 
-    return foodStar;
-}
-
-function calculateAccomodationRating () {
+//Calculates the average rating of OUT in the result (city) based on comments from COMMENTS_CITY
+function getOutRating (result) {
     
-    let accomodationStar = document.createElement("div");
-    //loop through stars/ratings + put in array
-    //Math.round till heltal 0-5
- 
-    return accomodationStar;
-}
+    let cityOutRating = [];
 
-function renderStars () 
+    for (let comment of COMMENTS_CITY) {
+        
+        if (result.id == comment.cityID) {
 
-function cityContent(result)
+           cityOutRating.push(comment.stars.out);
+            
+        }
+    }
 
-function dropDown ()
+    let averageOutRating = cityOutRating.reduce((a, b) => a + b, 0) / cityOutRating.length;
 
-function dropDownEntertainment ()
+    return Math.round(averageOutRating * 10) / 10;
 
-function dropDownProgram ()
+ }
 
-*/
+ //Calculates the average rating of ACCOMODATION in the result (city) based on comments from COMMENTS_CITY
+ function getAccomodationRating (result) {
+
+    let cityAccomodationRating = [];
+
+    for (let comment of COMMENTS_CITY) {
+        
+        if (result.id == comment.cityID) {
+
+            cityAccomodationRating.push(comment.stars.accomodation);
+            
+        }
+    }
+
+    let averageAccomodationRating = cityAccomodationRating.reduce((a, b) => a + b, 0) / cityAccomodationRating.length;
+
+    return Math.round(averageAccomodationRating * 10) / 10;
+
+ }
+
+ //Calculates the average rating of FOOD in the result (city) based on comments from COMMENTS_CITY
+ function getFoodRating (result) {
+
+    let cityFoodRating = [];
+
+    for (let comment of COMMENTS_CITY) {
+        
+        if (result.id == comment.cityID) {
+
+            cityFoodRating.push(comment.stars.food);
+            
+        }
+    }
+
+    let averageFoodRating = cityFoodRating.reduce((a, b) => a + b, 0) / cityFoodRating.length;
+
+    return Math.round(averageFoodRating * 10) / 10;
+
+ }
