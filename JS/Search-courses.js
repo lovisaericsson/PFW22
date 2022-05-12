@@ -57,7 +57,7 @@ function getProgramLocation (result) {
     return programLocation;
 }
 
-function mapProgramById (result) {
+function getProgramRatingAverage (result) {
 
     let ratedProgram = [];
 
