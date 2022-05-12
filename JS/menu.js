@@ -19,7 +19,7 @@ const menuElements = [
 
     { //Contact
         icon: "../Images/Icons/contact.png",
-        iconClicked: "../Images/Icons/about-clicked.png", //Will be changed to "clicked" mail
+        iconClicked: "../Images/Icons/contact-clicked.png",
         url: "Contact.html"
 
     },
