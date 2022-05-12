@@ -95,3 +95,24 @@ function getOutRating (result) {
     return cityDescription;
 
  }
+
+ function getCityEntertainment (result) {
+
+        let cityEntertainment = [];
+
+        for (let city of CITIES) {
+            
+            if (result.id == city.id) {
+
+                for (let entertainment of ENTERTAINMENT_PLACES) {
+
+                    if (result.id == entertainment.cityID) {
+                        
+                        cityEntertainment.push(entertainment.name);
+                    }
+                }
+            }
+        }
+
+        return cityEntertainment;
+ }
