@@ -96,6 +96,7 @@ function getOutRating (result) {
 
  }
 
+ //Fetches each city's (result) entertainment places and returns an array with them
  function getCityEntertainment (result) {
 
         let cityEntertainment = [];
@@ -117,6 +118,7 @@ function getOutRating (result) {
         return cityEntertainment;
  }
 
+ //Fetches each city's (result) math programmes and returns an array with them
  function getMathPrograms (result) {
 
     let mathProgramsInCity = [];
@@ -137,6 +139,7 @@ function getOutRating (result) {
     return mathProgramsInCity;
  }
 
+  //Fetches each city's (result) technology programmes and returns an array with them
  function getTechnologyPrograms (result) {
 
     let technologyProgramsInCity = [];
@@ -157,6 +160,7 @@ function getOutRating (result) {
     return technologyProgramsInCity;
  }
 
+  //Fetches each city's (result) law programmes and returns an array with them
  function getLawPrograms (result) {
 
     let lawProgramsInCity = [];
@@ -177,6 +181,7 @@ function getOutRating (result) {
     return lawProgramsInCity;
  }
 
+  //Fetches each city's (result) medicine programmes and returns an array with them
  function getMedicinePrograms (result) {
 
     let medicineProgramsInCity = [];
@@ -197,6 +202,7 @@ function getOutRating (result) {
     return medicineProgramsInCity;
  }
 
+  //Fetches each city's (result) sociology programmes and returns an array with them
  function getSociologyPrograms (result) {
 
     let sociologyProgramsInCity = [];
@@ -217,7 +223,7 @@ function getOutRating (result) {
     return sociologyProgramsInCity;
  }
 
-
+ //Fetches each city's (result) philosophy programmes and returns an array with them
  function getPhilosophyPrograms (result) {
 
     let philosophyProgramsInCity = [];
@@ -238,6 +244,7 @@ function getOutRating (result) {
     return philosophyProgramsInCity;
  }
 
+  //Fetches each city's (result) design programmes and returns an array with them
  function getDesignPrograms (result) {
 
     let designProgramsInCity = [];
