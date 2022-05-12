@@ -13,6 +13,11 @@ body {
     background-color: black;
 }
 
+.header > img{
+    width: 15vw;
+    margin-left: 2vh;
+}
+
 h1 {
     margin: 0;
     color: white;
@@ -89,3 +94,53 @@ h2 {
     font-size: 4vw;
     text-align: left;
 }
+
+/* ABOUT US */
+.info-about-us > p{ 
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.info-about-us > h3{
+    margin-top: 18vh;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.team{
+    display: flex;
+    flex-direction: column;
+}
+
+.person {
+    display: flex;
+    flex-direction: column;;
+    align-items: center;
+}
+    
+.person > div > p {
+    margin: 0px 25px 15px 25px;
+    text-align: center;
+}
+.person > div > h4{
+    text-align: center;
+}
+    
+.person > img{
+    width: 20vh;   
+    margin-top: 2vh;
+}
+
+h3{
+     margin-left: 2vh;
+}
+/* BOX FOR CONTACT US */
+ .contact-us{
+    width: 100vw;
+    height: 15vh;
+    margin-top: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+ }
+
