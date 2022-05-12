@@ -169,7 +169,6 @@ function renderAdvertisement() {
 // Randomize a number from 1-11
 function randomizeAdNumber() {
     let nr = Math.floor(Math.random() * 11) + 1;
-    console.log(nr);
     return nr
 }
 
@@ -420,13 +419,13 @@ function createDiv(typeDiv, result, wrapper) {
         let programDropDown = document.createElement("div");
         programDropDown.innerHTML =
             `<h2>${result.name.toUpperCase()}</h2>
-        <h3>TEACHERS:</h3>
-        <h3>STUDENTS:</h3>
-        <h3>COURSES:</h3>
-        <h3>LEVEL:</h3>
+        <h3>TEACHERS: ${getTeachersRatingAverage(result)}</h3>
+        <h3>STUDENTS: ${getStudentsRatingAverage(result)}</h3>
+        <h3>COURSES: ${getProgramRatingAverage(result)}</h3>
+        <h3>LEVEL: ${getProgramLevel(result)}</h3>
         <br>
-        <h3>COUNTRY:</h3>
-        <h3>CITY:</h3>
+        <h3>COUNTRY: ${location[0].split(",").pop()}</h3>
+        <h3>CITY: ${location[0].split(",")[0]}</h3>
         <h3>LANGUAGE:</h3>
         <h3>UNIVERSITY:</h3>
         `
