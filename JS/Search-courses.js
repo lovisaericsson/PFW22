@@ -3,26 +3,26 @@
 //Get the program level of each program, VERY general - can be substituted with "result" parameter and be used instead 
 //of for loop and have result.level instead of program.level
 
-function getProgramLevel (result) {
+function getProgramLevel(result) {
 
     let programLevel = [];
 
-        if (result.level == 0) {
-            programLevel.push(LEVELS[0])
-        }
+    if (result.level == 0) {
+        programLevel.push(LEVELS[0])
+    }
 
-        if (result.level == 1) {
-            programLevel.push(LEVELS[1])
-        }
+    if (result.level == 1) {
+        programLevel.push(LEVELS[1])
+    }
 
-        if (result.level == 2) {
-            programLevel.push(LEVELS[2])
-        };
+    if (result.level == 2) {
+        programLevel.push(LEVELS[2])
+    };
 
     return programLevel;
 }
 
-function getProgramLocation (result) {
+function getProgramLocation(result) {
 
     let programCity = [];
     let programCountry = [];
@@ -53,20 +53,20 @@ function getProgramLocation (result) {
     }
 
     programLocation.push(programCity + ", " + programCountry)
-    
+
     return programLocation;
 }
 
-function getProgramRatingAverage (result) {
+function getProgramRatingAverage(result) {
 
     let ratedProgram = [];
 
     for (let comment of COMMENTS_PROGRAMME) {
-        
+
         if (result.id == comment.programmeID) {
 
-           ratedProgram.push(comment.stars.courses);
-            
+            ratedProgram.push(comment.stars.courses);
+
         }
     }
 
@@ -76,16 +76,16 @@ function getProgramRatingAverage (result) {
 
 }
 
-function getTeachersRatingAverage (result) {
+function getTeachersRatingAverage(result) {
 
     let ratedTeacher = []
 
     for (let comment of COMMENTS_PROGRAMME) {
-        
+
         if (result.id == comment.programmeID) {
 
-           ratedTeacher.push(comment.stars.teachers);
-            
+            ratedTeacher.push(comment.stars.teachers);
+
         }
     }
 
@@ -100,11 +100,11 @@ function getStudentsRatingAverage(result) {
     let ratedStudent = []
 
     for (let comment of COMMENTS_PROGRAMME) {
-        
+
         if (result.id == comment.programmeID) {
 
             ratedStudent.push(comment.stars.students);
-            
+
         }
     }
 
@@ -114,7 +114,7 @@ function getStudentsRatingAverage(result) {
 
 }
 
-function getProgramSubject (result) {
+function getProgramSubject(result) {
 
     let programSubject = [];
 
@@ -127,7 +127,7 @@ function getProgramSubject (result) {
     return programSubject;
 }
 
-function getProgramLanguage (result) {
+function getProgramLanguage(result) {
 
     let programLanguage = "";
 
@@ -138,7 +138,7 @@ function getProgramLanguage (result) {
             for (let language of LANGUAGES) {
 
                 if (result.language == language.id) {
-                   programLanguage += language.name
+                    programLanguage += language.name
                 }
             }
         }
@@ -147,7 +147,7 @@ function getProgramLanguage (result) {
     return programLanguage;
 }
 
-function getProgramUniversity (result) {
+function getProgramUniversity(result) {
 
     let programUniversity = "";
 

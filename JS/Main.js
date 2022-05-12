@@ -417,38 +417,30 @@ function createDiv(typeDiv, result, wrapper) {
 
         // Dropdown of program
         let programDropDown = document.createElement("div");
+        programDropDown.classList.add("program-dropdown");
         programDropDown.innerHTML =
             `<h2>${result.name.toUpperCase()}</h2>
-        <h3>TEACHERS: ${getTeachersRatingAverage(result)}</h3>
-        <h3>STUDENTS: ${getStudentsRatingAverage(result)}</h3>
-        <h3>COURSES: ${getProgramRatingAverage(result)}</h3>
-        <h3>LEVEL: ${getProgramLevel(result)}</h3>
+        <div><h3>TEACHERS:</h3></div>${getTeachersRatingAverage(result)}</div>
+        <div><h3>STUDENTS: ${getStudentsRatingAverage(result)}</h3></div>
+        <div><h3>COURSES: ${getProgramRatingAverage(result)}</h3></div>
+        <div><h3>LEVEL: ${getProgramLevel(result)}</h3></div>
         <br>
-        <h3>COUNTRY: ${location[0].split(",").pop()}</h3>
-        <h3>CITY: ${location[0].split(",")[0]}</h3>
-        <h3>LANGUAGE:</h3>
-        <h3>UNIVERSITY:</h3>
+        <div><h3>COUNTRY: ${location[0].split(",").pop()}</h3></div>
+        <div><h3>CITY: ${location[0].split(",")[0]}</h3></div>
+        <div><h3>LANGUAGE: ${getProgramLanguage(result)}</h3></div>
+        <div><h3>UNIVERSITY: ${getProgramUniversity(result)}</h3></div>
         `
-        programDropDown.classList.add("program-dropdown");
         programDropDown.classList.add("no-display");
         createDiv.appendChild(programDropDown);
         createDiv.addEventListener("click", function () {
             programDropDown.classList.toggle("no-display");
+
         })
-
-
-
-        // let divWithProgrammes = createProgramDivs(locations);
-
-        // createDiv.addEventListener("click", function () {
-        //     divWithProgrammes.classList.toggle("program-result")
-        // })
 
     }
 
     return createDiv
 }
-
 
 
 function createCityDivs(cities) {

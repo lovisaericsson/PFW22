@@ -202,8 +202,8 @@
     font-size: 4.5vw;
 }
 
-.program-dropdown > h3 {
-    margin: 5px 0px 0px 0px;
+.program-dropdown > div > h3{
     font-size: 4vw;
+    margin: 5px 0px 0px 0px;
 
 }
