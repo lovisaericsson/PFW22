@@ -95,6 +95,7 @@ h2 {
     text-align: left;
 }
 
+/* ABOUT US */
 .info-about-us > p{ 
     margin-left: 20px;
     margin-right: 20px;
@@ -111,18 +112,15 @@ h2 {
 }
 
 .person {
-
     display: flex;
     flex-direction: column;;
     align-items: center;
-  }
-
+}
     
-  .person > div > p {
-    
+.person > div > p {
     margin: 0px 25px 15px 25px;
     text-align: center;
-    }
+}
 .person > div > h4{
     text-align: center;
 }
@@ -131,10 +129,11 @@ h2 {
     width: 20vh;   
     margin-top: 2vh;
 }
- h3{
-     margin-left: 2vh;
- }
 
+h3{
+     margin-left: 2vh;
+}
+/* BOX FOR CONTACT US */
  .contact-us{
     width: 100vw;
     height: 15vh;
