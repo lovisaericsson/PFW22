@@ -168,7 +168,7 @@ function getProgramUniversity(result) {
     return programUniversity;
 }
 
-// Creates stars
+// Creates stars – parameter used to calculate iterations
 function createStars(number) {
     let stars = ``;
     for (let i = 0; i < Math.round(number); i++) {

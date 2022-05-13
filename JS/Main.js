@@ -437,8 +437,6 @@ function createDiv(typeDiv, result, wrapper) {
 
         })
 
-
-
     }
 
     return createDiv
