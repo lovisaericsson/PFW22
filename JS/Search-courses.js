@@ -168,8 +168,12 @@ function getProgramUniversity(result) {
     return programUniversity;
 }
 
-// Creates a div with a single star
-function createStar() {
-    let star = `<img src="../Images/Icons/star.png"></img>`;
-    return star;
+// Creates stars – parameter used to calculate iterations
+function createStars(number) {
+    let stars = ``;
+    for (let i = 0; i < Math.round(number); i++) {
+        let star = `<img class="star-img" src="../Images/Icons/star.png"></img>`;
+        stars += star;
+    }
+    return stars;
 }

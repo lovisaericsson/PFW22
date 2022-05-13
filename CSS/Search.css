@@ -197,13 +197,38 @@
     border-radius: 5px;
 }
 
+/* Title in dropdown */
 .program-dropdown > h2 {
     text-align: center;
     font-size: 4.5vw;
 }
 
+/* Each row of text in dropdown */
+.program-dropdown div{
+    display: flex;
+}
+
+/* Stars + number */
+.program-dropdown div div {
+    margin-left: 5px;
+    display: flex;
+    align-items: center;
+    font-size: 4vw;
+}
+
+/* Title of each row of text in dropdown */
 .program-dropdown > div > h3{
     font-size: 4vw;
     margin: 5px 0px 0px 0px;
 
+}
+
+/* Stars */
+.star-img {
+    width: 5vw;
+    height: 5vw;
+}
+
+.star-img:last-child {
+    margin-right: 5px;
 }
