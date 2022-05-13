@@ -216,16 +216,21 @@ function toggleOptions() {
         results = [...filterFilo(results)]
         results = [...filterMedicine(results)]
         results = [...filterSociology(results)]
-        results = [...filterBacherlors(results)]
-        results = [...filterMasters(results)]
-        results = [...filterDoctorate(results)]
+        if ((doctorateBtn.classList.contains("active") == true || (mastersBtn.classList.contains("active") == true || (bachelorsBtn.classList.contains("active") == true)))) {
+            results = [...filterBacherlors(results)]
+            results = [...filterMasters(results)]
+            results = [...filterDoctorate(results)]
+        }
 
         // If no subject filters are selected
         if (results.length == 0) {
             results = [...getAllProgrammes()]
-            results = [...filterBacherlors(results)];
-            results = [...filterMasters(results)]
-            results = [...filterDoctorate(results)]
+
+            if ((doctorateBtn.classList.contains("active") == true || (mastersBtn.classList.contains("active") == true || (bachelorsBtn.classList.contains("active") == true)))) {
+                results = [...filterBacherlors(results)]
+                results = [...filterMasters(results)]
+                results = [...filterDoctorate(results)]
+            }
         }
 
     }
@@ -332,22 +337,22 @@ function filterSociology(results) {
 // Program filter level functions
 function filterBacherlors(results) {
     // If button is not toggled, the belonging subject results will not show
-    if (bachelorsBtn.classList.contains("active") == true) {
-        results = results.filter((result) => result.level == 0);
+    if (bachelorsBtn.classList.contains("active") == false) {
+        results = results.filter((result) => result.level !== 0);
     }
     return results;
 }
 function filterMasters(results) {
     // If button is not toggled, the belonging subject results will not show
-    if (mastersBtn.classList.contains("active") == true) {
-        results = results.filter((result) => result.level == 1);
+    if (mastersBtn.classList.contains("active") == false) {
+        results = results.filter((result) => result.level !== 1);
     }
     return results;
 }
 function filterDoctorate(results) {
     // If button is not toggled, the belonging subject results will not show
-    if (doctorateBtn.classList.contains("active") == true) {
-        results = results.filter((result) => result.level == 2);
+    if (doctorateBtn.classList.contains("active") == false) {
+        results = results.filter((result) => result.level !== 2);
     }
     return results;
 }
