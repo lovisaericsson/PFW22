@@ -420,9 +420,9 @@ function createDiv(typeDiv, result, wrapper) {
         programDropDown.classList.add("program-dropdown");
         programDropDown.innerHTML =
             `<h2>${result.name.toUpperCase()}</h2>
-        <div><h3>TEACHERS:</h3><div>${createStar()}${getTeachersRatingAverage(result)}</div></div>
-        <div><h3>STUDENTS: ${getStudentsRatingAverage(result)}</h3></div>
-        <div><h3>COURSES: ${getProgramRatingAverage(result)}</h3></div>
+        <div><h3>TEACHERS:</h3><div>${createStars(getTeachersRatingAverage(result))}(${getTeachersRatingAverage(result)}/5)</div></div>
+        <div><h3>STUDENTS:</h3><div>${createStars(getStudentsRatingAverage(result))}(${getStudentsRatingAverage(result)}/5)</div></div>
+        <div><h3>COURSES:</h3> <div>${createStars(getProgramRatingAverage(result))}(${getProgramRatingAverage(result)}/5)</div></div>
         <div><h3>LEVEL: ${getProgramLevel(result)}</h3></div>
         <br>
         <div><h3>COUNTRY: ${location[0].split(",").pop()}</h3></div>
