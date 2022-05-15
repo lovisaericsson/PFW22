@@ -106,10 +106,13 @@
     text-align: left;
 }
 
+
+
 .hidden-city-result{
     display: none;
     margin-top: 2vh;
 }
+
 
 .city-result{
     display: grid;
@@ -127,6 +130,10 @@
     font-size: 12pt;
     padding-bottom: 10px;
     padding-top: 10px;
+}
+
+.city-result > div > button{
+    background-color: rgb(251, 242, 242);
 }
 
 .program-result{
