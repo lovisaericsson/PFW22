@@ -487,9 +487,10 @@ function createCityDivs(cities) {
     cityContainer.classList.add("hidden-city-result");
 
     for (let city of cities) {
-        let cityDiv = document.createElement("div");
-        cityDiv.innerHTML = city.name
-        cityContainer.appendChild(cityDiv);
+        //let cityDiv = document.createElement("div");
+        //cityDiv.innerHTML = city.name
+        //cityContainer.appendChild(cityDiv);
+        createDiv("city", city, cityContainer);
     }
 
     return cityContainer
