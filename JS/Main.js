@@ -394,7 +394,41 @@ function createDiv(typeDiv, result, wrapper) {
     }
 
     if (typeDiv == "city") {
-        createDiv.innerHTML = result.name
+
+        let createButton = document.createElement("button");
+        createButton.setAttribute('id', 'myBtn');
+        createButton.innerHTML = result.name
+        createDiv.appendChild(createButton);
+
+        let popUp = document.getElementById("popup-City");
+        let popUpcontent = document.getElementsByClassName("popup-content");
+        let span = document.getElementsByClassName("close")[0];
+
+        createButton.addEventListener("click", function () {
+            
+            popUp.style.display = "block";
+            popUpcontent[0].innerHTML = `
+            <img src = "../Images/${getCityPicturePath(result)}"</img> 
+            <h2> ${result.name.toUpperCase()}</h2> 
+            <p>${getCityDescription (result)}</p>
+            <br>
+            <div><h3>OUT: ${getOutRating (result)} / 5</h3></div> 
+            <div><h3>FOOD: ${getFoodRating (result)} / 5</h3></div> 
+            <div><h3>ACCOMODATION: ${getAccomodationRating(result)} / 5</h3></div> 
+            <br>`           
+        })
+
+        span.addEventListener("click", function () {
+            popUp.style.display = "none";
+        })
+
+    // When the user clicks anywhere of the popup, close it 
+
+    window.onclick = function (event) {
+        if(event.target == popUp){
+            popUp.style.display = "none";
+        }
+    }
     }
 
     if (typeDiv == "program") {
