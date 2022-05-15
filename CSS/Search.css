@@ -232,3 +232,63 @@
 .star-img:last-child {
     margin-right: 5px;
 }
+
+/* Pop Up */
+
+.popup-City {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0, 0, 0, 0.4);
+    }
+    
+    .popup-content{
+        background-color: #fefefe;
+        margin: 15% auto;
+        padding: 20px;
+        border: 1px solid black;
+        width: 80%;
+    }
+    .popup-content > h2 {
+        text-align: center;
+    }
+    
+    .popup-content > img{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
+    }
+    
+    .popup-header{
+        margin: 15% auto;
+        padding: 20px;
+        width: 80%;
+    }
+    .close{
+        color: rgb(255, 255, 255);
+        float: right;
+        font-size: 50px;
+        font-weight: bold;
+        margin-top: 2vh;
+    }
+    
+    .close:hover, .close:focus{
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    
+    button{
+        background-color: #D0D0D0;
+        border: none;
+        width: 80%;
+        font-size: 5vw;
+        text-align: left;
+    }
