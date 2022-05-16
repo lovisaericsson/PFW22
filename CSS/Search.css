@@ -130,6 +130,12 @@
     gap: 5px;
 }
 
+.city-arrow-out {
+    background-size: 10vw;
+    background-repeat: no-repeat;
+    background-position: 98% 50%;
+    /* Arrow image is shown through JS */
+}
 
 .city-result > div{
     padding-left: 10px;

@@ -409,7 +409,8 @@ function createDiv(typeDiv, result, wrapper) {
     }
 
     if (typeDiv == "city") {
-
+        createDiv.classList.add("city-arrow-out")
+        createDiv.style.backgroundImage = "url('../Images/arrow-right.png')";
         let createButton = document.createElement("button");
         createButton.setAttribute('id', 'myBtn');
         createButton.innerHTML = result.name
