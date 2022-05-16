@@ -1,6 +1,9 @@
 "use strict";
 let menu = document.querySelector(".menu")
 
+
+// !!!!! DO NOT CHANGE ICON NAMES !!!!! 
+// Color changing of menu icons depend on icon file names
 const menuElements = [
 
     { //Home
