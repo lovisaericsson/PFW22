@@ -62,4 +62,25 @@ function buildMenu() {
     }
 }
 
+function toTopFunction() {
+    let body = document.querySelector("body")
+    let toTopBtn = document.createElement("a");
+    toTopBtn.setAttribute("href", "#");
+    toTopBtn.classList.add("to-top");
+    body.appendChild(toTopBtn);
+
+    let toTop = document.querySelector(".to-top");
+    window.addEventListener("scroll", () => {
+        if (window.pageYOffset > 100) {
+            toTop.classList.add("to-top-active")
+        } else {
+            toTop.classList.remove("to-top-active")
+        }
+    })
+}
+
+
+
+
 buildMenu();
+toTopFunction();
