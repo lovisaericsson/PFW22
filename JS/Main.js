@@ -386,10 +386,25 @@ function createDiv(typeDiv, result, wrapper) {
         createDiv.innerHTML = result.name
         let cities = getCitiesFromCountry(result.id);
         let divWithCities = createCityDivs(cities);
+        // "initializes" arrow
+        createDiv.classList.add("country-arrow-down");
+        createDiv.style.backgroundImage = "url('../Images/arrow-down.png')";
         createDiv.appendChild(divWithCities);
 
         createDiv.addEventListener("click", function () {
             divWithCities.classList.toggle("city-result")
+            // When clicked, show arrow up
+            if (divWithCities.classList.contains("city-result")) {
+                createDiv.classList.add("country-arrow-up");
+                createDiv.classList.remove("country-arrow-down");
+                createDiv.style.backgroundImage = "url('../Images/arrow-up.png')";
+            }
+            // When not clicked, show arrow down
+            else {
+                createDiv.classList.remove("country-arrow-up");
+                createDiv.classList.add("country-arrow-down");
+                createDiv.style.backgroundImage = "url('../Images/arrow-down.png')";
+            }
         })
     }
 
@@ -405,30 +420,30 @@ function createDiv(typeDiv, result, wrapper) {
         let span = document.getElementsByClassName("close")[0];
 
         createButton.addEventListener("click", function () {
-            
+
             popUp.style.display = "block";
             popUpcontent[0].innerHTML = `
             <img src = "../Images/${getCityPicturePath(result)}"</img> 
             <h2> ${result.name.toUpperCase()}</h2> 
-            <p>${getCityDescription (result)}</p>
+            <p>${getCityDescription(result)}</p>
             <br>
-            <div><h3>OUT: ${getOutRating (result)} / 5</h3></div> 
-            <div><h3>FOOD: ${getFoodRating (result)} / 5</h3></div> 
+            <div><h3>OUT: ${getOutRating(result)} / 5</h3></div> 
+            <div><h3>FOOD: ${getFoodRating(result)} / 5</h3></div> 
             <div><h3>ACCOMODATION: ${getAccomodationRating(result)} / 5</h3></div> 
-            <br>`           
+            <br>`
         })
 
         span.addEventListener("click", function () {
             popUp.style.display = "none";
         })
 
-    // When the user clicks anywhere of the popup, close it 
+        // When the user clicks anywhere of the popup, close it 
 
-    window.onclick = function (event) {
-        if(event.target == popUp){
-            popUp.style.display = "none";
+        window.onclick = function (event) {
+            if (event.target == popUp) {
+                popUp.style.display = "none";
+            }
         }
-    }
     }
 
     if (typeDiv == "program") {

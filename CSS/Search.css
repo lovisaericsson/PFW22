@@ -106,7 +106,17 @@
     text-align: left;
 }
 
+.country-arrow-down {
+    background-size: 10vw;
+    background-repeat: no-repeat;
+    background-position: 98% 50%;
+}
 
+.country-arrow-up {
+    background-size: 10vw;
+    background-repeat: no-repeat;
+    background-position: 98% 3%
+}
 
 .hidden-city-result{
     display: none;
