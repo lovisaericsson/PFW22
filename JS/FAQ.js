@@ -150,14 +150,27 @@ function renderQuestions() {
 function createDiv(title, answer, wrapper) {
   let createDiv = document.createElement("div");
   createDiv.classList.add("box");
-  createDiv.innerHTML = title
+  createDiv.innerHTML = `<p>${title}</p>`;
+  // "initializes" arrow
+  createDiv.classList.add("faq-arrow-down");
+  createDiv.style.backgroundImage = "url('../Images/arrow-down.png')";
   wrapper.appendChild(createDiv);
 
   let divWithFaq = createAnswer(answer);
   createDiv.appendChild(divWithFaq);
   createDiv.addEventListener("click", function () {
     divWithFaq.classList.toggle("answer-result");
-
+    if (divWithFaq.classList.contains("answer-result")) {
+      createDiv.classList.add("faq-arrow-up");
+      createDiv.classList.remove("faq-arrow-down");
+      createDiv.style.backgroundImage = "url('../Images/arrow-up.png')";
+    }
+    // When not clicked, show arrow down
+    else {
+      createDiv.classList.remove("faq-arrow-up");
+      createDiv.classList.add("faq-arrow-down");
+      createDiv.style.backgroundImage = "url('../Images/arrow-down.png')";
+    }
   })
 
 
