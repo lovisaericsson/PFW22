@@ -26,7 +26,27 @@ h1 {
     width: 80%;
     font-size: 5vw;
     text-align:left;
-  
+    background-size: 10vw;
+    background-repeat: no-repeat;
+    background-position: 98% 50%;
+    /* Arrow image is shown through JS */
+}
+
+.box p {
+    margin: 0;
+    padding-right: 50px;
+}
+
+.faq-arrow-down {
+    background-size: 10vw;
+    background-repeat: no-repeat;
+    background-position: 98% 50%;
+}
+
+.faq-arrow-up {
+    background-size: 10vw;
+    background-repeat: no-repeat;
+    background-position: 98% 10%
 }
 
 .hidden-answer-result{
