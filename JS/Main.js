@@ -453,6 +453,9 @@ function createDiv(typeDiv, result, wrapper) {
         let subject = getProgramSubject(result);
         let level = getProgramLevel(result);
 
+        createDiv.classList.add("program-arrow-down");
+        createDiv.style.backgroundImage = "url('../Images/arrow-down.png')";
+
         // Top tags (subject, level)
         let topTags = document.createElement("div");
         topTags.innerHTML = `<p>${subject[0].toUpperCase()}</p> <p>${level[0].toUpperCase()}</p>`
@@ -489,6 +492,17 @@ function createDiv(typeDiv, result, wrapper) {
         createDiv.appendChild(programDropDown);
         createDiv.addEventListener("click", function () {
             programDropDown.classList.toggle("no-display");
+            if (programDropDown.classList.contains("no-display")) {
+                createDiv.classList.add("program-arrow-down");
+                createDiv.classList.remove("program-arrow-up");
+                createDiv.style.backgroundImage = "url('../Images/arrow-down.png')";
+            }
+            // When not clicked, show arrow down
+            else {
+                createDiv.classList.remove("program-arrow-down");
+                createDiv.classList.add("program-arrow-up");
+                createDiv.style.backgroundImage = "url('../Images/arrow-up.png')";
+            }
 
         })
 

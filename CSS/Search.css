@@ -246,6 +246,18 @@
 
 }
 
+.program-arrow-up {
+    background-size: 10vw;
+    background-repeat: no-repeat;
+    background-position: 98% 10%
+}
+
+.program-arrow-down {
+    background-size: 10vw;
+    background-repeat: no-repeat;
+    background-position: 98% 50%;
+}
+
 /* Stars */
 .star-img {
     width: 5vw;
