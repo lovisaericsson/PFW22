@@ -62,6 +62,7 @@ function buildMenu() {
     }
 }
 
+// Builds to-top button + event listener
 function toTopFunction() {
     let body = document.querySelector("body")
     let toTopBtn = document.createElement("a");
