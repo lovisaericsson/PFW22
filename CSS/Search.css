@@ -327,3 +327,14 @@
         font-size: 5vw;
         text-align: left;
     }
+
+    /* Pop up rating content */
+    .popup-content div h3{
+        display: flex;
+        align-items: center;
+    }
+
+    /* Pop up first star */
+    .popup-content div h3 .star-img:first-child{
+        padding-left: 5px;
+    }
