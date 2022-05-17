@@ -432,9 +432,11 @@ function createDiv(typeDiv, result, wrapper) {
             <div><h3>FOOD: ${createStars(getFoodRating(result))}(${getFoodRating(result)}/5)</h3></div> 
             <div><h3>ACCOMODATION: ${createStars(getAccomodationRating(result))}(${getAccomodationRating(result)}/5)</h3></div> 
             <br>
-            <div class = "entertainment"> </div> 
+            <div class = "entertainment"></div>
+            <div class = "programme"></div>  
             `
-            entertainmentCreateDropdown(result)        
+            entertainmentCreateDropdown(result)
+            programmeCreateDropdown(result)        
         })
 
         span.addEventListener("click", function () {
@@ -572,7 +574,49 @@ function entertainmentCreateDropdown(result) {
     }); 
 }
 
+function programmeCreateDropdown(result){
+    let createDiv = document.createElement("div");
+    let programmeDropdown = document.querySelector(".programme");
+    createDiv.classList.add("box");
+    programmeDropdown.appendChild(createDiv);
+    programmeCreateDropdownResult(createDiv, result);
 
+    
+}
+
+function programmeCreateDropdownResult(createDiv, result) {
+        let programmeResult = getMathPrograms (result);
+        createDiv.classList.add("program-arrow-down");
+        createDiv.style.backgroundImage = "url('../Images/arrow-down.png')";
+
+      for(let i = 0; i < programmeResult.length; i++){
+        // Dropdown of program
+        let location = getProgramLocation(programmeResult[i]);
+        let programDropDown = document.createElement("div");
+        programDropDown.classList.add("program-dropdown");
+        programDropDown.innerHTML =
+            `<h2>${programmeResult[i].name.toUpperCase()}</h2>
+        <div><h3>TEACHERS:</h3><div>${createStars(getTeachersRatingAverage(result))}(${getTeachersRatingAverage(result)}/5)</div></div>
+        <div><h3>STUDENTS:</h3><div>${createStars(getStudentsRatingAverage(result))}(${getStudentsRatingAverage(result)}/5)</div></div>
+        <div><h3>COURSES:</h3> <div>${createStars(getProgramRatingAverage(result))}(${getProgramRatingAverage(result)}/5)</div></div>
+        <div><h3>LEVEL: ${getProgramLevel(programmeResult[i])}</h3></div>
+        <br>
+        <div><h3>COUNTRY: ${location[0].split(",").pop()}</h3></div>
+        <div><h3>CITY: ${location[0].split(",")[0]}</h3></div>
+        <div><h3>LANGUAGE: ${getProgramLanguage(programmeResult[i])}</h3></div>
+        <div><h3>UNIVERSITY: ${getProgramUniversity(programmeResult[i])}</h3></div>
+        `
+        programDropDown.classList.add("no-display");
+        createDiv.appendChild(programDropDown);
+        createDiv.addEventListener("click", function () {
+        programDropDown.classList.toggle("no-display"); 
+        })
+      }
+       
+
+    return createDiv
+    
+}
 //Direct code
 addEventHandlers()
 renderResults()
