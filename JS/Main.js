@@ -431,7 +431,12 @@ function createDiv(typeDiv, result, wrapper) {
             <div><h3>OUT: ${createStars(getOutRating(result))}(${getOutRating(result)}/5)</h3></div> 
             <div><h3>FOOD: ${createStars(getFoodRating(result))}(${getFoodRating(result)}/5)</h3></div> 
             <div><h3>ACCOMODATION: ${createStars(getAccomodationRating(result))}(${getAccomodationRating(result)}/5)</h3></div> 
-            <br>`
+            <br>
+            <div class = "entertainment"></div>
+            <div class = "programme"></div>  
+            `
+            entertainmentCreateDropdown(result)
+            programmeCreateDropdown(result)        
         })
 
         span.addEventListener("click", function () {
@@ -547,6 +552,88 @@ function getCitiesFromCountry(id) {
 function getInfoFromProgram(id) {
     let program = PROGRAMMES.filter(program => program.id == id);
     return program.name
+}
+
+function entertainmentCreateDropdown(result) {
+    let createDiv = document.createElement("div");
+    let entertainmentDropdown = document.querySelector(".entertainment");
+    createDiv.classList.add("box");
+    createDiv.innerHTML = `
+    <div class = "entertainment-name"></div>
+    <div class = "entertainment-info"></div>`
+    entertainmentDropdown.appendChild(createDiv);
+    let entertainmentName = document.querySelector(".entertainment-name");
+    let entertainmentInfo = document.querySelector(".entertainment-info");
+    entertainmentName.innerHTML = "NÖJE";
+    entertainmentInfo.innerHTML = `
+    <p> ${getCityEntertainment(result)}</p>
+    `
+    entertainmentInfo.classList.add("no-display");
+    createDiv.addEventListener("click", function () {
+    entertainmentInfo.classList.toggle("no-display");
+    }); 
+}
+
+function programmeCreateDropdown(result) {
+        
+      for(let j = 0; j < FIELDS.length; j++){
+        let createDiv = document.createElement("div");
+        let programmeDropdown = document.querySelector(".programme");
+        createDiv.classList.add("box");
+        createDiv.classList.add("program-arrow-down");
+        createDiv.style.backgroundImage = "url('../Images/arrow-down.png')";
+
+          let programmeResult;
+          if(FIELDS[j].name == "Matematik"){
+            programmeResult = getMathPrograms(result);
+          }
+          if(FIELDS[j].name == "Teknik"){
+            programmeResult =  getTechnologyPrograms(result) ;
+          } 
+          if(FIELDS[j].name == "Juridik"){
+            programmeResult =  getLawPrograms(result) ;
+          }
+          if(FIELDS[j].name == "Medicin"){
+            programmeResult =  getMedicinePrograms(result) ;
+          }
+          if(FIELDS[j].name == "Sociologi"){
+            programmeResult =  getSociologyPrograms(result) ;
+          }
+          if(FIELDS[j].name == "Filosofi"){
+            programmeResult =  getPhilosophyPrograms(result) ;
+          }
+          if(FIELDS[j].name == "Design"){
+            programmeResult =  getDesignPrograms(result) ;
+          }  
+          console.log(getPhilosophyPrograms(result))
+        for(let i = 0; i < programmeResult.length; i++){
+            // Dropdown of program
+            let location = getProgramLocation(programmeResult[i]);
+            let programDropDown = document.createElement("div");
+            programDropDown.classList.add("program-dropdown");
+            programDropDown.innerHTML =
+                `<h2>${programmeResult[i].name.toUpperCase()}</h2>
+            <div><h3>TEACHERS:</h3><div>${createStars(getTeachersRatingAverage(result))}(${getTeachersRatingAverage(result)}/5)</div></div>
+            <div><h3>STUDENTS:</h3><div>${createStars(getStudentsRatingAverage(result))}(${getStudentsRatingAverage(result)}/5)</div></div>
+            <div><h3>COURSES:</h3> <div>${createStars(getProgramRatingAverage(result))}(${getProgramRatingAverage(result)}/5)</div></div>
+            <div><h3>LEVEL: ${getProgramLevel(programmeResult[i])}</h3></div>
+            <br>
+            <div><h3>COUNTRY: ${location[0].split(",").pop()}</h3></div>
+            <div><h3>CITY: ${location[0].split(",")[0]}</h3></div>
+            <div><h3>LANGUAGE: ${getProgramLanguage(programmeResult[i])}</h3></div>
+            <div><h3>UNIVERSITY: ${getProgramUniversity(programmeResult[i])}</h3></div>
+            `
+            programDropDown.classList.add("no-display");
+            createDiv.appendChild(programDropDown);
+            createDiv.addEventListener("click", function () {
+            programDropDown.classList.toggle("no-display"); 
+            })
+          }
+
+          programmeDropdown.appendChild(createDiv);
+
+      }
+    
 }
 //Direct code
 addEventHandlers()
