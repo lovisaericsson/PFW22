@@ -370,3 +370,8 @@
         justify-content: center;
         flex-direction: column;
     }
+
+    .entertainment-info p{
+        line-height: 25px;
+        font-size: 14px;
+    }
