@@ -121,7 +121,6 @@ function getOutRating (result) {
  function getCityPicturePath (result) {
 
     let photoPath = "";
-    let randomPhotos = [];
     let index = 0;
 
     for (let country of COUNTRIES) {
