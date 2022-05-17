@@ -596,31 +596,31 @@ function programmeCreateDropdown(result) {
         let subjectName;
         if (FIELDS[j].name == "Matematik") {
             programmeResult = getMathPrograms(result);
-            subjectName = "Matematik Program";
+            subjectName = "Matematik Program".toUpperCase();
         }
         if (FIELDS[j].name == "Teknik") {
             programmeResult = getTechnologyPrograms(result);
-            subjectName = "Teknik Program";
+            subjectName = "Teknik Program".toUpperCase();
         }
         if (FIELDS[j].name == "Juridik") {
             programmeResult = getLawPrograms(result);
-            subjectName = "Juridik Program";
+            subjectName = "Juridik Program".toUpperCase();
         }
         if (FIELDS[j].name == "Medicin") {
             programmeResult = getMedicinePrograms(result);
-            subjectName = "Medicin Program";
+            subjectName = "Medicin Program".toUpperCase();
         }
         if (FIELDS[j].name == "Sociologi") {
             programmeResult = getSociologyPrograms(result);
-            subjectName = "Sociologi Program";
+            subjectName = "Sociologi Program".toUpperCase();
         }
         if (FIELDS[j].name == "Filosofi") {
             programmeResult = getPhilosophyPrograms(result);
-            subjectName = "Filosofi Program";
+            subjectName = "Filosofi Program".toUpperCase();
         }
         if (FIELDS[j].name == "Design") {
             programmeResult = getDesignPrograms(result);
-            subjectName = "Design Program";
+            subjectName = "Design Program".toUpperCase();
         }
 
         // If the city has at least one program within the given field/subject
