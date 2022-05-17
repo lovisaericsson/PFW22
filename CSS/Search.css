@@ -288,8 +288,9 @@
         margin: 15% auto;
         margin-bottom: 25%;
         padding: 20px;
-        border: 1px solid black;
+        border: 1px solid white;
         width: 80%;
+        border-radius: 10px;
     }
     .popup-content > h2 {
         text-align: center;
@@ -300,19 +301,21 @@
         margin-left: auto;
         margin-right: auto;
         width: 80%;
+        border-radius: 5px;
     }
     
     .popup-header{
-        margin: 15% auto;
-        padding: 20px;
+        margin: -13% auto;
         width: 80%;
     }
     .close{
-        color: rgb(255, 255, 255);
-        float: right;
+        color: rgb(106, 106, 106);
+        position: relative;
         font-size: 50px;
         font-weight: bold;
         margin-top: 2vh;
+        left: 293px;
+        top: 70px;
     }
     
     .close:hover, .close:focus{
@@ -366,4 +369,9 @@
         display: flex;
         justify-content: center;
         flex-direction: column;
+    }
+
+    .entertainment-info p{
+        line-height: 25px;
+        font-size: 14px;
     }
