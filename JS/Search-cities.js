@@ -109,7 +109,7 @@ function getOutRating (result) {
 
                     if (result.id == entertainment.cityID) {
                         
-                        cityEntertainment.push(entertainment.name);
+                        cityEntertainment.push(" " + entertainment.name);
                     }
                 }
             }

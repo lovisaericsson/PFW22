@@ -431,7 +431,10 @@ function createDiv(typeDiv, result, wrapper) {
             <div><h3>OUT: ${createStars(getOutRating(result))}(${getOutRating(result)}/5)</h3></div> 
             <div><h3>FOOD: ${createStars(getFoodRating(result))}(${getFoodRating(result)}/5)</h3></div> 
             <div><h3>ACCOMODATION: ${createStars(getAccomodationRating(result))}(${getAccomodationRating(result)}/5)</h3></div> 
-            <br>`
+            <br>
+            <div class = "entertainment"> </div> 
+            `
+            entertainmentCreateDropdown(result)        
         })
 
         span.addEventListener("click", function () {
@@ -548,6 +551,28 @@ function getInfoFromProgram(id) {
     let program = PROGRAMMES.filter(program => program.id == id);
     return program.name
 }
+
+function entertainmentCreateDropdown(result) {
+    let createDiv = document.createElement("div");
+    let entertainmentDropdown = document.querySelector(".entertainment");
+    createDiv.classList.add("box");
+    createDiv.innerHTML = `
+    <div class = "entertainment-name"></div>
+    <div class = "entertainment-info"></div>`
+    entertainmentDropdown.appendChild(createDiv);
+    let entertainmentName = document.querySelector(".entertainment-name");
+    let entertainmentInfo = document.querySelector(".entertainment-info");
+    entertainmentName.innerHTML = "NÖJE";
+    entertainmentInfo.innerHTML = `
+    <p> ${getCityEntertainment(result)}</p>
+    `
+    entertainmentInfo.classList.add("no-display");
+    createDiv.addEventListener("click", function () {
+    entertainmentInfo.classList.toggle("no-display");
+    }); 
+}
+
+
 //Direct code
 addEventHandlers()
 renderResults()
