@@ -338,3 +338,31 @@
     .popup-content div h3 .star-img:first-child{
         padding-left: 5px;
     }
+
+    .city-dropdown-arrow-up {
+        background-size: 10vw;
+        background-repeat: no-repeat;
+        background-position: 98% 10px;
+    }
+    
+    .city-dropdown-arrow-down {
+        background-size: 10vw;
+        background-repeat: no-repeat;
+        background-position: 98% 50%;
+    }
+
+    .box-city {
+        background-color: #D0D0D0;
+        padding: 20px;
+        margin: 20px 0px 0px 0px;
+        border-radius: 10px;
+        flex-grow: 1;
+        font-size: 5vw;
+        text-align: left;
+    }
+
+    .programmes-city {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }

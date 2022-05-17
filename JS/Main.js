@@ -432,8 +432,8 @@ function createDiv(typeDiv, result, wrapper) {
             <div><h3>FOOD: ${createStars(getFoodRating(result))}(${getFoodRating(result)}/5)</h3></div> 
             <div><h3>ACCOMODATION: ${createStars(getAccomodationRating(result))}(${getAccomodationRating(result)}/5)</h3></div> 
             <br>
-            <div class = "entertainment"></div>
-            <div class = "programme"></div>  
+            <div class = "entertainment-city"></div>
+            <div class = "programmes-city"></div>  
             `
             entertainmentCreateDropdown(result)
             programmeCreateDropdown(result)
@@ -556,8 +556,10 @@ function getInfoFromProgram(id) {
 
 function entertainmentCreateDropdown(result) {
     let createDiv = document.createElement("div");
-    let entertainmentDropdown = document.querySelector(".entertainment");
-    createDiv.classList.add("box");
+    createDiv.classList.add("city-dropdown-arrow-down");
+    createDiv.style.backgroundImage = "url('../Images/arrow-down.png')";
+    let entertainmentDropdown = document.querySelector(".entertainment-city");
+    createDiv.classList.add("box-city");
     createDiv.innerHTML = `
     <div class = "entertainment-name"></div>
     <div class = "entertainment-info"></div>`
@@ -571,7 +573,19 @@ function entertainmentCreateDropdown(result) {
     entertainmentInfo.classList.add("no-display");
     createDiv.addEventListener("click", function () {
         entertainmentInfo.classList.toggle("no-display");
-    });
+        if (entertainmentInfo.classList.contains("no-display")) {
+            createDiv.classList.add("city-dropdown-arrow-down");
+            createDiv.classList.remove("city-dropdown-arrow-up");
+            createDiv.style.backgroundImage = "url('../Images/arrow-down.png')";
+        }
+        // When not clicked, show arrow down
+        else {
+            createDiv.classList.remove("city-dropdown-arrow-down");
+            createDiv.classList.add("city-dropdown-arrow-up");
+            createDiv.style.backgroundImage = "url('../Images/arrow-up.png')";
+        }
+
+    })
 }
 
 function programmeCreateDropdown(result) {
@@ -611,11 +625,11 @@ function programmeCreateDropdown(result) {
 
         // If the city has at least one program within the given field/subject
         if (programmeResult.length > 0) {
-            let programmeDropdown = document.querySelector(".programme");
+            let programmeDropdown = document.querySelector(".programmes-city");
             let createDiv = document.createElement("div");
             createDiv.innerHTML = `${subjectName}`
-            createDiv.classList.add("box");
-            createDiv.classList.add("program-arrow-down");
+            createDiv.classList.add("box-city");
+            createDiv.classList.add("city-dropdown-arrow-down");
             createDiv.style.backgroundImage = "url('../Images/arrow-down.png')";
             for (let i = 0; i < programmeResult.length; i++) {
                 // Dropdown of program
@@ -638,6 +652,17 @@ function programmeCreateDropdown(result) {
                 createDiv.appendChild(programDropDown);
                 createDiv.addEventListener("click", function () {
                     programDropDown.classList.toggle("no-display");
+                    if (programDropDown.classList.contains("no-display")) {
+                        createDiv.classList.add("city-dropdown-arrow-down");
+                        createDiv.classList.remove("city-dropdown-arrow-up");
+                        createDiv.style.backgroundImage = "url('../Images/arrow-down.png')";
+                    }
+                    // When not clicked, show arrow down
+                    else {
+                        createDiv.classList.remove("city-dropdown-arrow-down");
+                        createDiv.classList.add("city-dropdown-arrow-up");
+                        createDiv.style.backgroundImage = "url('../Images/arrow-up.png')";
+                    }
                 })
 
             }
