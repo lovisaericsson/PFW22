@@ -164,6 +164,9 @@ function createDiv(title, answer, wrapper) {
       createDiv.classList.add("faq-arrow-up");
       createDiv.classList.remove("faq-arrow-down");
       createDiv.style.backgroundImage = "url('../Images/arrow-up.png')";
+
+      //FAQ automatically scrolls up to display whole answer
+      createDiv.scrollIntoView({block: "center"})
     }
     // When not clicked, show arrow down
     else {
