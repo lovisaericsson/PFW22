@@ -554,25 +554,32 @@ function getInfoFromProgram(id) {
     return program.name
 }
 
+// Creates entertainment dropdown in city-popup
 function entertainmentCreateDropdown(result) {
+    let entertainmentDropdown = document.querySelector(".entertainment-city");
+
+    // Create entertainment div, add arrow, fill with 2 div and append dropdown
     let createDiv = document.createElement("div");
     createDiv.classList.add("city-dropdown-arrow-down");
     createDiv.style.backgroundImage = "url('../Images/arrow-down.png')";
-    let entertainmentDropdown = document.querySelector(".entertainment-city");
     createDiv.classList.add("box-city");
     createDiv.innerHTML = `
     <div class = "entertainment-name"></div>
     <div class = "entertainment-info"></div>`
     entertainmentDropdown.appendChild(createDiv);
+
+    // Fill entertainment dropdown
     let entertainmentName = document.querySelector(".entertainment-name");
     let entertainmentInfo = document.querySelector(".entertainment-info");
     entertainmentName.innerHTML = "NÖJE";
-    entertainmentInfo.innerHTML = `
-    <p> ${getCityEntertainment(result)}</p>
-    `
+    entertainmentInfo.innerHTML = `<p> ${getCityEntertainment(result)}</p>`
     entertainmentInfo.classList.add("no-display");
+
+    // Eventlistner on click
     createDiv.addEventListener("click", function () {
+        // Toggle display on/off
         entertainmentInfo.classList.toggle("no-display");
+        // When clicked, show arrow up
         if (entertainmentInfo.classList.contains("no-display")) {
             createDiv.classList.add("city-dropdown-arrow-down");
             createDiv.classList.remove("city-dropdown-arrow-up");
@@ -588,12 +595,17 @@ function entertainmentCreateDropdown(result) {
     })
 }
 
+// Creates program dropdown in city-popup for each subject
 function programmeCreateDropdown(result) {
 
+    // Loops through fields
     for (let j = 0; j < FIELDS.length; j++) {
 
         let programmeResult;
         let subjectName;
+
+        // If the fields name is X, store the corresponding functions result in 
+        // programme result and fill subject name with corresponding subject name
         if (FIELDS[j].name == "Matematik") {
             programmeResult = getMathPrograms(result);
             subjectName = "Matematik Program".toUpperCase();
@@ -623,16 +635,20 @@ function programmeCreateDropdown(result) {
             subjectName = "Design Program".toUpperCase();
         }
 
-        // If the city has at least one program within the given field/subject
+        // If the city has at least one program within the given field/subject...
         if (programmeResult.length > 0) {
             let programmeDropdown = document.querySelector(".programmes-city");
+
+            // ...create a div for each subject
             let createDiv = document.createElement("div");
             createDiv.innerHTML = `${subjectName}`
             createDiv.classList.add("box-city");
             createDiv.classList.add("city-dropdown-arrow-down");
             createDiv.style.backgroundImage = "url('../Images/arrow-down.png')";
+
+            // Loops through programmeResult 
             for (let i = 0; i < programmeResult.length; i++) {
-                // Dropdown of program
+                // Creates dropdown for each of its programs, fills with info and appends
                 let location = getProgramLocation(programmeResult[i]);
                 let programDropDown = document.createElement("div");
                 programDropDown.classList.add("program-dropdown");
@@ -650,8 +666,12 @@ function programmeCreateDropdown(result) {
                 `
                 programDropDown.classList.add("no-display");
                 createDiv.appendChild(programDropDown);
+
+                // Eventlistner on click
                 createDiv.addEventListener("click", function () {
+                    // Toggle display on/off
                     programDropDown.classList.toggle("no-display");
+                    // When clicked, show arrow up
                     if (programDropDown.classList.contains("no-display")) {
                         createDiv.classList.add("city-dropdown-arrow-down");
                         createDiv.classList.remove("city-dropdown-arrow-up");
@@ -664,13 +684,10 @@ function programmeCreateDropdown(result) {
                         createDiv.style.backgroundImage = "url('../Images/arrow-up.png')";
                     }
                 })
-
             }
+            // Appends dropdown to subject div
             programmeDropdown.appendChild(createDiv);
         }
-
-
-
     }
 
 }
