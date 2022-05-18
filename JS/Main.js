@@ -396,7 +396,7 @@ function createDiv(typeDiv, result, wrapper) {
             // When clicked, show arrow up
             if (divWithCities.classList.contains("city-result")) {
                 createDiv.classList.add("country-arrow-up");
-                createDiv.scrollIntoView({block: "center"})
+                createDiv.scrollIntoView({ block: "center" })
                 createDiv.classList.remove("country-arrow-down");
                 createDiv.style.backgroundImage = "url('../Images/arrow-up.png')";
             }
@@ -412,16 +412,14 @@ function createDiv(typeDiv, result, wrapper) {
     if (typeDiv == "city") {
         createDiv.classList.add("city-arrow-out")
         createDiv.style.backgroundImage = "url('../Images/arrow-right.png')";
-        let createButton = document.createElement("button");
-        createButton.setAttribute('id', 'myBtn');
-        createButton.innerHTML = result.name
-        createDiv.appendChild(createButton);
+        createDiv.innerHTML = result.name
+        wrapper.appendChild(createDiv);
 
         let popUp = document.getElementById("popup-City");
         let popUpcontent = document.getElementsByClassName("popup-content");
         let span = document.getElementsByClassName("close")[0];
 
-        createButton.addEventListener("click", function () {
+        createDiv.addEventListener("click", function () {
             popUp.style.display = "block";
             popUpcontent[0].innerHTML = `
             <img src = "../Images/${getCityPicturePath(result)}"</img> 
@@ -504,7 +502,7 @@ function createDiv(typeDiv, result, wrapper) {
             }
             // When not clicked, show arrow down
             else {
-                createDiv.scrollIntoView({block: "center"})
+                createDiv.scrollIntoView({ block: "center" })
                 createDiv.classList.remove("program-arrow-down");
                 createDiv.classList.add("program-arrow-up");
                 createDiv.style.backgroundImage = "url('../Images/arrow-up.png')";
