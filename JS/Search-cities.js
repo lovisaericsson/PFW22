@@ -1,4 +1,13 @@
+function checkIfValueNaN (value) {
+    if (isNaN(value) == false) {
+        return "/5";
+    } else {
+        return "";
+    }
+}
+
 //Calculates the average rating of OUT in the result (city) based on comments from COMMENTS_CITY
+
 function getOutRating (result) {
     
     let cityOutRating = [];
@@ -14,7 +23,15 @@ function getOutRating (result) {
 
     let averageOutRating = cityOutRating.reduce((a, b) => a + b, 0) / cityOutRating.length;
 
-    return Math.round(averageOutRating * 10) / 10;
+    if (isNaN(averageOutRating) == true) {
+        return "No ratings available";
+    } 
+    
+    if (isNaN(averageOutRating) == false) {
+        return Math.round(averageOutRating * 10) / 10;
+    }
+
+    return averageOutRating;
 
  }
 
@@ -34,8 +51,15 @@ function getOutRating (result) {
 
     let averageAccomodationRating = cityAccomodationRating.reduce((a, b) => a + b, 0) / cityAccomodationRating.length;
 
-    return Math.round(averageAccomodationRating * 10) / 10;
+    if (isNaN(averageAccomodationRating) == true) {
+        return "No ratings available"
+    } 
+    
+    if (isNaN(averageAccomodationRating) == false) {
+        return Math.round(averageAccomodationRating * 10) / 10;
+    }
 
+    return averageAccomodationRating;
  }
 
  //Calculates the average rating of FOOD in the result (city) based on comments from COMMENTS_CITY
@@ -54,7 +78,15 @@ function getOutRating (result) {
 
     let averageFoodRating = cityFoodRating.reduce((a, b) => a + b, 0) / cityFoodRating.length;
 
-    return Math.round(averageFoodRating * 10) / 10;
+    if (isNaN(averageFoodRating) == true) {
+        return "No ratings available"
+    } 
+    
+    if (isNaN(averageFoodRating) == false) {
+        return Math.round(averageFoodRating * 10) / 10;
+    }
+
+    return averageFoodRating;
 
  }
 

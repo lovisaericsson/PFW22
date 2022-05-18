@@ -428,9 +428,9 @@ function createDiv(typeDiv, result, wrapper) {
             <h2> ${result.name.toUpperCase()}</h2> 
             <p>${getCityDescription(result)}</p>
             <br>
-            <div><h3>OUT: ${createStars(getOutRating(result))}(${getOutRating(result)}/5)</h3></div> 
-            <div><h3>FOOD: ${createStars(getFoodRating(result))}(${getFoodRating(result)}/5)</h3></div> 
-            <div><h3>ACCOMODATION: ${createStars(getAccomodationRating(result))}(${getAccomodationRating(result)}/5)</h3></div> 
+            <div><h3>OUT: ${createStars(getOutRating(result))}(${getOutRating(result)}${checkIfValueNaN(getOutRating(result))})</h3></div> 
+            <div><h3>FOOD: ${createStars(getFoodRating(result))}(${getFoodRating(result)}${checkIfValueNaN(getFoodRating(result))})</h3></div> 
+            <div><h3>ACCOMODATION: ${createStars(getAccomodationRating(result))}(${getAccomodationRating(result)}${checkIfValueNaN(getAccomodationRating(result))})</h3></div> 
             <br>
             <div class = "entertainment-city"></div>
             <div class = "programmes-city"></div>  
