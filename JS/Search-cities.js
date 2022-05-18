@@ -153,19 +153,15 @@ function getOutRating (result) {
  function getCityPicturePath (result) {
 
     let photoPath = "";
+    let index = 0;
 
-    for (country of COUNTRIES) {
+    for (let country of COUNTRIES) {
 
         if (result.countryID == country.id) {
 
-            for (image of country.imagesNormal) {
-                
-                if (image.includes("normal_2") == true) {
+            index = Math.floor(Math.random() * country.imagesNormal.length)
+            photoPath += country.imagesNormal[index];
 
-                    photoPath += image;
-
-                }
-            }
         }
     }
 
