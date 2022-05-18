@@ -307,6 +307,9 @@
     .popup-header{
         margin: -13% auto;
         width: 80%;
+        text-align: right;
+        padding: 0px 20px;
+        position: relative;
     }
     .close{
         color: rgb(106, 106, 106);
@@ -314,8 +317,8 @@
         font-size: 50px;
         font-weight: bold;
         margin-top: 2vh;
-        left: 293px;
         top: 70px;
+        right: -5px;
     }
     
     .close:hover, .close:focus{
