@@ -48,13 +48,15 @@ body {
 .bgShape {
     display: flex;
     z-index: 1;
-    height: 40vh;
-    width: 40vh;
-    background-image: url(../Images/bgShape2.png);
+    height: 25vh;
+    width: 25vh;
+    background-image: url(../Images/bgShape3.png);
     background-size: cover;
     position: absolute;
-    top: 55%;
+    top: 60%;
     right: 0%;
+    padding-right: 15px;
+    margin-right: 10px;
 }
 
 .icon {
