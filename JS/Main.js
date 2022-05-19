@@ -204,7 +204,7 @@ function toggleOptions() {
         // If filter btn is toggled, show filters
         if (filterBtn.classList.contains("active") == true) {
             filterDropdown.classList.remove("no-display");
-            filterBtn.style.backgroundImage = "url('../Images/arrow-up.png')";
+            filterBtn.style.backgroundImage = "url('../Images/arrow-up-blue.png')";
         }
 
         // Calls programs function and filters the programs in turn
