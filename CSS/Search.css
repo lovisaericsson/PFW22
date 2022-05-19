@@ -1,5 +1,5 @@
 .search-header {
-    background-color: black;
+    background-color: #7392B7;
     padding: 15px;
 }
 
@@ -97,7 +97,7 @@
 }
 
 .box {
-    background-color: #D0D0D0;
+    background-color: #D8E1E9;
     padding: 20px;
     margin: 20px;
     border-radius: 10px;
@@ -140,7 +140,7 @@
     padding-left: 10px;
     border-radius: 10px;
     margin-bottom: 2vh;
-    background-color: rgb(251, 242, 242);
+    background-color: #B3C5D7;
     text-align: left;
     font-size: 12pt;
     padding-bottom: 10px;
@@ -204,7 +204,7 @@
     border-radius: 5px;
     border: none;
     outline: none;
-    background-color: gray;
+    background-color: #9aaec2;
     color: white;
     font-size: smaller;
     font-weight: bold;
@@ -358,7 +358,7 @@
     }
 
     .box-city {
-        background-color: #D0D0D0;
+        background-color: #D8E1E9;
         padding: 20px;
         margin: 20px 0px 0px 0px;
         border-radius: 10px;

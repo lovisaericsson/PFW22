@@ -1,149 +1,150 @@
 body {
-    margin: 0;
+  margin: 0;
 }
 
 /* HEADER */
 .header {
-    width: 100vw;
-    height: 15vh;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: black;
+  width: 100vw;
+  height: 15vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #7392B7;
 }
 
-.header > img{
-    width: 15vw;
-    margin-left: 2vh;
+.header > img {
+  width: 15vw;
+  margin-left: 2vh;
 }
 
 h1 {
-    margin: 0;
-    color: white;
+  margin: 0;
+  color: white;
 }
-
 
 /* ICONS */
 .contact-info {
-    width: 100vw;
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
+  width: 100vw;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
 }
 
-.contact-info div{
-    width: 25vw;
-    padding: 8px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.contact-info div {
+  width: 25vw;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.contact-info div img{
-    width: 12vw;
+.contact-info div img {
+  width: 12vw;
 }
 
-.contact-info div p{
-    font-size: 3.5vw;
+.contact-info div p {
+  font-size: 3.5vw;
 }
-
 
 /* FORM */
 .contact-form {
-    margin: 0px 20px 20px 20px;
-    padding-bottom: 5%;
-    padding-top: 5%;
-    border-radius: 5px;
-    background-color: #c4c4c4;
+  margin: 0px 20px 20px 20px;
+  padding-bottom: 5%;
+  padding-top: 5%;
+  border-radius: 5px;
+  background-color: #B3C5D7;
 }
 
 form {
-    text-align: center;
+  text-align: center;
 }
 
-form input:nth-child(2), form input:nth-child(4), input:nth-child(6){
-    width: 90%;
-    height: 5vh;
-    margin-bottom: 10px;
-    outline: none;
-    border-style: none;
-    border-radius: 5px;
+form input:nth-child(2),
+form input:nth-child(4),
+input:nth-child(6) {
+  width: 90%;
+  height: 5vh;
+  margin-bottom: 10px;
+  outline: none;
+  border-style: none;
+  border-radius: 5px;
 }
 
-form textarea{
-    width: 90%;
-    margin-bottom: 10px;
-    border-style: none;
-    border-radius: 5px;
-    resize: none;
-    font-family:'Nunito Sans', sans-serif; 
+form textarea {
+  width: 90%;
+  margin-bottom: 10px;
+  border-style: none;
+  border-radius: 5px;
+  resize: none;
+  font-family: 'Nunito Sans', sans-serif;
 }
 
-form button{
-    padding: 3vw 5vw 3vw 5vw;
-    border-radius: 5px;
-    border: none;
-    outline: none;
+form button {
+  padding: 3vw 5vw 3vw 5vw;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  background-color: #D8E1E9;
 }
 
 h2 {
-    margin-bottom: 2px;
-    padding-left: 5%;
-    font-size: 4vw;
-    text-align: left;
+  margin-bottom: 2px;
+  padding-left: 5%;
+  font-size: 4vw;
+  text-align: left;
 }
 
 /* ABOUT US */
-.info-about-us > p{ 
-    margin-left: 20px;
-    margin-right: 20px;
+.info-about-us > p {
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
-.info-about-us > h3{
-    margin-top: 18vh;
-    margin-left: 20px;
-    margin-right: 20px;
+.info-about-us > h3 {
+  margin-top: 18vh;
+  margin-left: 20px;
+  margin-right: 20px;
 }
-.team{
-    display: flex;
-    flex-direction: column;
+.team {
+  display: flex;
+  flex-direction: column;
 }
 
 .person {
-    display: flex;
-    flex-direction: column;;
-    align-items: center;
-}
-    
-.person > div > p {
-    margin: 0px 25px 15px 25px;
-    text-align: center;
-}
-.person > div > h4{
-    text-align: center;
-}
-    
-.person > img{
-    width: 20vh;   
-    margin-top: 2vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-h3{
-     margin-left: 2vh;
+.person > div > p {
+  margin: 0px 25px 15px 25px;
+  text-align: center;
+}
+.person > div > h4 {
+  text-align: center;
+}
+
+.person > img {
+  width: 20vh;
+  margin-top: 2vh;
+}
+
+h3 {
+  margin-left: 2vh;
 }
 /* BOX FOR CONTACT US */
- .contact-us{
-    width: 100vw;
-    height: 15vh;
-    margin-top: 5vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: black;
- }
+.contact-us {
+  width: 100vw;
+  height: 15vh;
+  margin-top: 5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #7392B7;
+}
 
- .team h4 {
-     margin-bottom: 0;
- }
+.team h4 {
+  margin-bottom: 0;
+}
