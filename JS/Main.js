@@ -187,7 +187,7 @@ function toggleOptions() {
         results = [...results, ...getAllCities()]
     }
 
-    // If programme is not toggled, or if cities/cointries is toggled along with programme, get all programmes
+    // If programme is not toggled, or if cities/countries is toggled along with programme, get all programmes
     if (programmeBtn.classList.contains("active") == true && (cityBtn.classList.contains("active") == true || countryBtn.classList.contains("active") == true)) {
         results = [...results, ...getAllProgrammes()]
     }
@@ -196,6 +196,8 @@ function toggleOptions() {
     if (programmeBtn.classList.contains("active") == true && cityBtn.classList.contains("active") == false && countryBtn.classList.contains("active") == false) {
         //...show filter
         filter.classList.remove("no-display");
+        document.getElementById("results").style.marginTop = "155px";
+
         // If filter btn is untoggled, dont show filters
         if (filterBtn.classList.contains("active") == false) {
             filterDropdown.classList.add("no-display");
@@ -223,7 +225,9 @@ function toggleOptions() {
         }
 
         // If no subject filters are selected
+        
         if (results.length == 0) {
+
             results = [...getAllProgrammes()]
 
             if ((doctorateBtn.classList.contains("active") == true || (mastersBtn.classList.contains("active") == true || (bachelorsBtn.classList.contains("active") == true)))) {
@@ -237,6 +241,7 @@ function toggleOptions() {
 
     // If programme is not toggled, or if cities/cointries is toggled along with programme, dont show filters
     if (programmeBtn.classList.contains("active") == false || (programmeBtn.classList.contains("active") == true && ((cityBtn.classList.contains("active") == true) || countryBtn.classList.contains("active") == true))) {
+        document.getElementById("results").style.marginTop = "120px";
         filter.classList.add("no-display");
     }
 
@@ -262,10 +267,12 @@ function toggleColors() {
     for (let i = 0; i < mainButtons.length; i++) {
         // If active, background color is lightgray
         if (mainButtons[i].classList.contains("active") == true) {
-            mainButtons[i].style.backgroundColor = "lightgray";
+            mainButtons[i].style.backgroundColor = "white";
+            mainButtons[i].style.color = "#9aaec2"
         } // If inactive, background color is darkgray 
         else if (mainButtons[i].classList.contains("active") == false) {
-            mainButtons[i].style.backgroundColor = "rgb(135, 135, 135)";
+            mainButtons[i].style.backgroundColor = "#9aaec2";
+            mainButtons[i].style.color = "white";
         }
     }
     // Colors for filter subject and level
@@ -275,10 +282,12 @@ function toggleColors() {
     for (let j = 0; j < filterButtons.length; j++) {
         // If active, background color is darkgray
         if (filterButtons[j].classList.contains("active") == true) {
-            filterButtons[j].style.backgroundColor = "darkgray";
+            filterButtons[j].style.backgroundColor = "#b7c9da";
+            filterButtons[j].style.color = "white";
         } // If inactive, background color is darkgray
         else if (filterButtons[j].classList.contains("active") == false) {
-            filterButtons[j].style.backgroundColor = "lightgray";
+            filterButtons[j].style.backgroundColor = "#9aaec2";
+            filterButtons[j].style.color = "white";
         }
     }
 }
@@ -428,7 +437,7 @@ function createDiv(typeDiv, result, wrapper) {
             <br>
             <div><h3>OUT: ${createStars(getOutRating(result))}(${getOutRating(result)}${checkIfValueNaN(getOutRating(result))})</h3></div> 
             <div><h3>FOOD: ${createStars(getFoodRating(result))}(${getFoodRating(result)}${checkIfValueNaN(getFoodRating(result))})</h3></div> 
-            <div><h3>ACCOMODATION: ${createStars(getAccomodationRating(result))}(${getAccomodationRating(result)}${checkIfValueNaN(getAccomodationRating(result))})</h3></div> 
+            <div><h3>HOUSING: ${createStars(getAccomodationRating(result))}(${getAccomodationRating(result)}${checkIfValueNaN(getAccomodationRating(result))})</h3></div> 
             <br>
             <div class = "entertainment-city"></div>
             <div class = "programmes-city"></div>  
