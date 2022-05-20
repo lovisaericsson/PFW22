@@ -1,3 +1,6 @@
+"use strict"
+//Check if the value is NaN, 
+// If value is not a number return "/5" 
 function checkIfValueNaN (value) {
     if (isNaN(value) == false) {
         return "/5";
@@ -149,7 +152,7 @@ function getOutRating (result) {
 
         return cityEntertainment;
  }
-
+ // Gets pitcure path based on parameter(result)
  function getCityPicturePath (result) {
 
     let photoPath = "";

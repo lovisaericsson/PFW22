@@ -1,9 +1,6 @@
 "use strict";
 let menu = document.querySelector(".menu")
 
-
-// !!!!! DO NOT CHANGE ICON NAMES !!!!! 
-// Color changing of menu icons depend on icon file names
 const menuElements = [
 
     { //Home
@@ -35,10 +32,10 @@ const menuElements = [
     },
 ]
 
-// Checks is html-name is the same as image-name
+// Checks if html-name is the same as image-name
 function check(i) {
     let path = window.location.pathname;
-    let pagename = path.split("/").pop().split(".")[0].toLocaleLowerCase();
+    let pagename = path.split("/").pop().split(".")[0].toLowerCase();
     let image = menuElements[i].icon;
     let imagename = image.split("/").pop().split(".")[0];
 
@@ -79,9 +76,6 @@ function toTopFunction() {
         }
     })
 }
-
-
-
-
+//Direct code 
 buildMenu();
 toTopFunction();

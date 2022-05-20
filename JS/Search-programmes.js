@@ -21,13 +21,13 @@ function getProgramLevel(result) {
 
     return programLevel;
 }
-
+// Fetches programe location based on result 
 function getProgramLocation(result) {
 
     let programCity = [];
     let programCountry = [];
     let programLocation = [];
-
+//Fetches city name 
     for (let university of UNIVERSITIES) {
         if (result.universityID == university.id) {
             for (let city of CITIES) {
@@ -37,7 +37,7 @@ function getProgramLocation(result) {
             }
         }
     }
-
+//Fetches country name 
     for (let university of UNIVERSITIES) {
         if (result.universityID == university.id) {
             for (let city of CITIES) {
@@ -51,12 +51,12 @@ function getProgramLocation(result) {
             }
         }
     }
-
+//Concat city name with country name separated with ","
     programLocation.push(programCity + ", " + programCountry)
 
     return programLocation;
 }
-
+//Fetches comments rating for courses 
 function getProgramRatingAverage(result) {
 
     let ratedProgram = [];
@@ -69,12 +69,13 @@ function getProgramRatingAverage(result) {
 
         }
     }
-
+//Sums up array 
     let averageScore = ratedProgram.reduce((a, b) => a + b, 0) / ratedProgram.length;
-
+//Returns averageScore with only one decimal 
     return Math.round(averageScore * 10) / 10;
 
 }
+//Fetches comments rating for teachers  
 
 function getTeachersRatingAverage(result) {
 
@@ -88,12 +89,13 @@ function getTeachersRatingAverage(result) {
 
         }
     }
-
+//Sums up array 
     let teacherAverageScore = ratedTeacher.reduce((a, b) => a + b, 0) / ratedTeacher.length;
-
+//Returns averageScore with only one decimal 
     return Math.round(teacherAverageScore * 10) / 10;
 
 }
+//Fetches comments rating for students  
 
 function getStudentsRatingAverage(result) {
 
@@ -107,13 +109,13 @@ function getStudentsRatingAverage(result) {
 
         }
     }
-
+//Sums up array 
     let studentAverageScore = ratedStudent.reduce((a, b) => a + b, 0) / ratedStudent.length;
-
+//Returns averageScore with only one decimal 
     return Math.round(studentAverageScore * 10) / 10;
 
 }
-
+//Fetches program subject 
 function getProgramSubject(result) {
 
     let programSubject = [];
@@ -126,7 +128,7 @@ function getProgramSubject(result) {
 
     return programSubject;
 }
-
+//Fetches language subject 
 function getProgramLanguage(result) {
 
     let programLanguage = "";
@@ -146,7 +148,7 @@ function getProgramLanguage(result) {
 
     return programLanguage;
 }
-
+//Fetches university subject 
 function getProgramUniversity(result) {
 
     let programUniversity = "";

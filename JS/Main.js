@@ -591,44 +591,27 @@ function createDiv (typeDiv, result, wrapper) {
 
   return createDiv
 }
-
+//Creates city divs for country-dropdown 
 function createCityDivs (cities) {
   let cityContainer = document.createElement('div')
   cityContainer.classList.add('hidden-city-result')
 
   for (let city of cities) {
-    //let cityDiv = document.createElement("div");
-    //cityDiv.innerHTML = city.name
-    //cityContainer.appendChild(cityDiv);
     createDiv('city', city, cityContainer)
   }
 
   return cityContainer
 }
-
-function createProgramDivs (locations) {
-  let programContainer = document.createElement('div')
-  programContainer.classList.add('hidden-program-result')
-
-  for (let location of locations) {
-    let locationDiv = document.createElement('div')
-    locationDiv.innerHTML = program.name
-    programContainer.appendChild(programDiv)
-  }
-
-  return programContainer
-}
-
+//Fetches cities based on countryID 
 function getCitiesFromCountry (id) {
   let cities = CITIES.filter(city => city.countryID == id)
   return cities
 }
-
+//Fetches info based on programid 
 function getInfoFromProgram (id) {
   let program = PROGRAMMES.filter(program => program.id == id)
   return program.name
 }
-
 // Creates entertainment dropdown in city-popup
 function entertainmentCreateDropdown (result) {
   let entertainmentDropdown = document.querySelector('.entertainment-city')
@@ -654,13 +637,13 @@ function entertainmentCreateDropdown (result) {
   createDiv.addEventListener('click', function () {
     // Toggle display on/off
     entertainmentInfo.classList.toggle('no-display')
-    // When clicked, show arrow up
+    // When not clicked, show arrow down
     if (entertainmentInfo.classList.contains('no-display')) {
       createDiv.classList.add('city-dropdown-arrow-down')
       createDiv.classList.remove('city-dropdown-arrow-up')
       createDiv.style.backgroundImage = "url('../Images/arrow-down.png')"
     }
-    // When not clicked, show arrow down
+    // When clicked, show arrow up
     else {
       createDiv.classList.remove('city-dropdown-arrow-down')
       createDiv.classList.add('city-dropdown-arrow-up')
@@ -756,13 +739,13 @@ function programmeCreateDropdown (result) {
         createDiv.addEventListener('click', function () {
           // Toggle display on/off
           programDropDown.classList.toggle('no-display')
-          // When clicked, show arrow up
+          // When not clicked, show arrow down
           if (programDropDown.classList.contains('no-display')) {
             createDiv.classList.add('city-dropdown-arrow-down')
             createDiv.classList.remove('city-dropdown-arrow-up')
             createDiv.style.backgroundImage = "url('../Images/arrow-down.png')"
           }
-          // When not clicked, show arrow down
+          // When clicked, show arrow up
           else {
             createDiv.classList.remove('city-dropdown-arrow-down')
             createDiv.classList.add('city-dropdown-arrow-up')
