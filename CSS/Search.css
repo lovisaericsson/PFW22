@@ -1,379 +1,376 @@
 .search-header {
-    background-color: #7392B7;
-    padding: 15px;
+  background-color: #7392b7;
+  padding: 15px;
 }
 
-.no-display{
-    display: none;
+.no-display {
+  display: none;
 }
-
 
 /* TOP FILTERS – Länder, städer, program */
 .mainfilters {
-    display: flex;
-    justify-content: center
+  display: flex;
+  justify-content: center;
 }
 
 .mainfilter-btn {
-    padding: 5px 10px 5px 10px;
-    flex-grow: 1;
-    border-radius: 5px;
-    border: none;
-    text-align: center;
-    font-size: 5vw;
-    color: white;
+  padding: 5px 10px 5px 10px;
+  flex-grow: 1;
+  border-radius: 5px;
+  border: none;
+  text-align: center;
+  font-size: 5vw;
+  color: white;
 }
 
-.mainfilter-btn:nth-child(1), 
-.mainfilter-btn:nth-child(2){
-    margin-right: 10px;
+.mainfilter-btn:nth-child(1),
+.mainfilter-btn:nth-child(2) {
+  margin-right: 10px;
 }
-
 
 /* FILTER PROGRAMS */
 .filterprogram {
-    margin-top: 10px;
-    display: flex;
-    flex-direction: column;
-    border-radius: 5px;
-    background-color: white;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  background-color: white;
 }
 
 .filter-program-btn {
-    margin-bottom: 0;
-    padding: 5px 10px 5px 10px;
-    width: 100%;
-    border-radius: 5px;
-    border: none;
-    outline: none;
-    text-align: left;
-    font-size: 5vw;
-    color: white;
-    background-size: 10vw;
-    background-repeat: no-repeat;
-    background-position: 98% 50%;
-    /* Arrow image is shown through JS */
+  margin-bottom: 0;
+  padding: 5px 10px 5px 10px;
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  text-align: left;
+  font-size: 5vw;
+  color: white;
+  background-size: 10vw;
+  background-repeat: no-repeat;
+  background-position: 98% 50%;
+  /* Arrow image is shown through JS */
 }
 
 .filter-heading {
-    margin: 0;
-    padding: 10px 0px 0px 10px;
+  margin: 0;
+  padding: 10px 0px 0px 10px;
 }
 
-.filter-subject-btns, .filter-level-btns {
-    padding: 5px;
-    display: flex;
-    flex-wrap: wrap;
+.filter-subject-btns,
+.filter-level-btns {
+  padding: 5px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.subject-filter-btn, .level-filter-btn {
-    margin: 4px;
-    padding: 7px;
-    flex: 1 0 21%;
-    border-radius: 5px;
-    border: none;
-    outline: none;
+.subject-filter-btn,
+.level-filter-btn {
+  margin: 4px;
+  padding: 7px;
+  flex: 1 0 21%;
+  border-radius: 5px;
+  border: none;
+  outline: none;
 }
 
 /* SEARCH FIELD */
 .inputfield-container {
-    display: flex;
+  display: flex;
 }
 
 #inputfield {
-    width: 100%;
-    margin-top: 10px;
-    padding: 5px;
-    border-radius: 5px;
-    border-style: none;
-    background-image: url(../Images/search-icon.png);
-    background-size: 5vw;
-    background-repeat: no-repeat;
-    background-position: 98% 50%;
+  width: 100%;
+  margin-top: 10px;
+  padding: 5px;
+  border-radius: 5px;
+  border-style: none;
+  background-image: url(../Images/search-icon.png);
+  background-size: 5vw;
+  background-repeat: no-repeat;
+  background-position: 98% 50%;
 }
 
 .no-display {
-    display: none;
+  display: none;
 }
 
 .box {
-    background-color: #D8E1E9;
-    padding: 20px;
-    margin: 20px;
-    border-radius: 10px;
-    width: 80%;
-    font-size: 5vw;
-    text-align: left;
+  background-color: #d8e1e9;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+  width: 80%;
+  font-size: 5vw;
+  text-align: left;
 }
 
 .country-arrow-down {
-    background-size: 10vw;
-    background-repeat: no-repeat;
-    background-position: 98% 50%;
+  background-size: 10vw;
+  background-repeat: no-repeat;
+  background-position: 98% 50%;
 }
 
 .country-arrow-up {
-    background-size: 10vw;
-    background-repeat: no-repeat;
-    background-position: 98% 3%
+  background-size: 10vw;
+  background-repeat: no-repeat;
+  background-position: 98% 3%;
 }
 
-.hidden-city-result{
-    display: none;
-    margin-top: 2vh;
+.hidden-city-result {
+  display: none;
+  margin-top: 2vh;
 }
 
-
-.city-result{
-    display: grid;
-    gap: 5px;
+.city-result {
+  display: grid;
+  gap: 5px;
 }
 
 .city-arrow-out {
-    background-size: 10vw;
-    background-repeat: no-repeat;
-    background-position: 98% 50%;
-    /* Arrow image is shown through JS */
+  background-size: 10vw;
+  background-repeat: no-repeat;
+  background-position: 98% 50%;
+  /* Arrow image is shown through JS */
 }
 
-.city-result > div{
-    padding-left: 10px;
-    border-radius: 10px;
-    margin-bottom: 2vh;
-    background-color: #B3C5D7;
-    text-align: left;
-    font-size: 12pt;
-    padding-bottom: 10px;
-    padding-top: 10px;
+.city-result > div {
+  padding-left: 10px;
+  border-radius: 10px;
+  margin-bottom: 2vh;
+  background-color: #b3c5d7;
+  text-align: left;
+  font-size: 12pt;
+  padding-bottom: 10px;
+  padding-top: 10px;
 }
 
-.city-result > div > button{
-    background-color: rgb(251, 242, 242);
+.city-result > div > button {
+  background-color: rgb(251, 242, 242);
 }
 
-.program-result{
-    display: grid;
-    grid-template-rows: repeat(4,1fr);
-    gap: 5px;
+.program-result {
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  gap: 5px;
 }
 
-
-.program-result > div{
-    padding-left: 10px;
-    border-radius: 10px;
-    margin-bottom: 2vh;
-    background-color: rgb(251, 242, 242);
-    text-align: left;
-    font-size: 12pt;
-    padding-bottom: 10px;
-    padding-top: 10px;
+.program-result > div {
+  padding-left: 10px;
+  border-radius: 10px;
+  margin-bottom: 2vh;
+  background-color: rgb(251, 242, 242);
+  text-align: left;
+  font-size: 12pt;
+  padding-bottom: 10px;
+  padding-top: 10px;
 }
 
-.hidden-program-result{
-    display: none;
-    margin-top: 2vh;
+.hidden-program-result {
+  display: none;
+  margin-top: 2vh;
 }
 .ad {
-    background-color: #D0D0D0;
-    padding: 20px;
-    margin: 20px;
-    border-radius: 10px;
-    width: 80%;
-    height: 10vh;
-    font-size: 5vw;
-    text-align: left;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+  background-color: #d0d0d0;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+  width: 80%;
+  height: 10vh;
+  font-size: 5vw;
+  text-align: left;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .bottomTag img {
-    height: 20px;
+  height: 20px;
 }
 
 .topTag {
-    display: flex;
-    gap: 5px;
-    margin: 0;
+  display: flex;
+  gap: 5px;
+  margin: 0;
 }
 
 .topTag p {
-    margin: 0;
-    margin: 4px 4px 4px 0px;
-    padding: 7px;
-    border-radius: 5px;
-    border: none;
-    outline: none;
-    background-color: #9aaec2;
-    color: white;
-    font-size: smaller;
-    font-weight: bold;
+  margin: 0;
+  margin: 4px 4px 4px 0px;
+  padding: 7px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  background-color: #9aaec2;
+  color: white;
+  font-size: smaller;
+  font-weight: bold;
 }
-
 
 /* Program Dropdown */
 .program-dropdown {
-    background-color: white;
-    margin: 10px 0px 0px 0px;
-    padding: 10px;
-    border-radius: 5px;
+  background-color: white;
+  margin: 10px 0px 0px 0px;
+  padding: 10px;
+  border-radius: 5px;
 }
 
 /* Title in dropdown */
 .program-dropdown > h2 {
-    text-align: center;
-    font-size: 4.5vw;
+  text-align: center;
+  font-size: 4.5vw;
 }
 
 /* Each row of text in dropdown */
-.program-dropdown div{
-    display: flex;
+.program-dropdown div {
+  display: flex;
 }
 
 /* Stars + number */
 .program-dropdown div div {
-    margin-left: 5px;
-    display: flex;
-    align-items: center;
-    font-size: 4vw;
+  margin-left: 5px;
+  display: flex;
+  align-items: center;
+  font-size: 4vw;
 }
 
 /* Title of each row of text in dropdown */
-.program-dropdown > div > h3{
-    font-size: 4vw;
-    margin: 5px 0px 0px 0px;
-
+.program-dropdown > div > h3 {
+  font-size: 4vw;
+  margin: 5px 0px 0px 0px;
 }
 
 .program-arrow-up {
-    background-size: 10vw;
-    background-repeat: no-repeat;
-    background-position: 98% 10%
+  background-size: 10vw;
+  background-repeat: no-repeat;
+  background-position: 98% 10%;
 }
 
 .program-arrow-down {
-    background-size: 10vw;
-    background-repeat: no-repeat;
-    background-position: 98% 50%;
+  background-size: 10vw;
+  background-repeat: no-repeat;
+  background-position: 98% 50%;
 }
 
 /* Stars */
 .star-img {
-    width: 5vw;
-    height: 5vw;
+  width: 5vw;
+  height: 5vw;
 }
 
 .star-img:last-child {
-    margin-right: 5px;
+  margin-right: 5px;
 }
 
 /* Pop Up */
 
 .popup-City {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%; 
-    height: 100%;
-    overflow: auto;
-    background-color: rgb(0,0,0);
-    background-color: rgba(0, 0, 0, 0.4);
-    }
-    
-    .popup-content{
-        background-color: #fefefe;
-        margin: 15% auto;
-        margin-bottom: 25%;
-        padding: 20px;
-        border: 1px solid white;
-        width: 80%;
-        border-radius: 10px;
-    }
-    .popup-content > h2 {
-        text-align: center;
-    }
-    
-    .popup-content > img{
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        width: 80%;
-        border-radius: 5px;
-    }
-    
-    .popup-header{
-        margin: -13% auto;
-        width: 80%;
-        text-align: right;
-        padding: 0px 20px;
-        position: relative;
-    }
-    .close{
-        color: rgb(106, 106, 106);
-        position: relative;
-        font-size: 50px;
-        font-weight: bold;
-        margin-top: 2vh;
-        top: 70px;
-        right: -5px;
-    }
-    
-    .close:hover, .close:focus{
-        color: black;
-        text-decoration: none;
-        cursor: pointer;
-    }
-    
-    button{
-        background-color: #D0D0D0;
-        border: none;
-        width: 80%;
-        font-size: 5vw;
-        text-align: left;
-    }
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
 
-    /* Pop up rating content */
-    .popup-content div h3{
-        display: flex;
-        align-items: center;
-    }
+.popup-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  margin-bottom: 25%;
+  padding: 20px;
+  border: 1px solid white;
+  width: 80%;
+  border-radius: 10px;
+}
+.popup-content > h2 {
+  text-align: center;
+}
 
-    /* Pop up first star */
-    .popup-content div h3 .star-img:first-child{
-        padding-left: 5px;
-    }
+.popup-content > img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  border-radius: 5px;
+}
 
-    .city-dropdown-arrow-up {
-        background-size: 10vw;
-        background-repeat: no-repeat;
-        background-position: 98% 10px;
-    }
-    
-    .city-dropdown-arrow-down {
-        background-size: 10vw;
-        background-repeat: no-repeat;
-        background-position: 98% 50%;
-    }
+.popup-header {
+  margin: -13% auto;
+  width: 80%;
+  text-align: right;
+  padding: 0px 20px;
+  position: relative;
+}
+.close {
+  color: rgb(106, 106, 106);
+  position: relative;
+  font-size: 50px;
+  font-weight: bold;
+  margin-top: 2vh;
+  top: 70px;
+  right: -5px;
+}
 
-    .box-city {
-        background-color: #D8E1E9;
-        padding: 20px;
-        margin: 20px 0px 0px 0px;
-        border-radius: 10px;
-        flex-grow: 1;
-        font-size: 5vw;
-        text-align: left;
-    }
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
 
-    .programmes-city {
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-    }
+button {
+  background-color: #d0d0d0;
+  border: none;
+  width: 80%;
+  font-size: 5vw;
+  text-align: left;
+}
 
-    .entertainment-info p{
-        line-height: 25px;
-        font-size: 14px;
-    }
+/* Pop up rating content */
+.popup-content div h3 {
+  display: flex;
+  align-items: center;
+}
+
+/* Pop up first star */
+.popup-content div h3 .star-img:first-child {
+  padding-left: 5px;
+}
+
+.city-dropdown-arrow-up {
+  background-size: 10vw;
+  background-repeat: no-repeat;
+  background-position: 98% 10px;
+}
+
+.city-dropdown-arrow-down {
+  background-size: 10vw;
+  background-repeat: no-repeat;
+  background-position: 98% 50%;
+}
+
+.box-city {
+  background-color: #d8e1e9;
+  padding: 20px;
+  margin: 20px 0px 0px 0px;
+  border-radius: 10px;
+  flex-grow: 1;
+  font-size: 5vw;
+  text-align: left;
+}
+
+.programmes-city {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.entertainment-info p {
+  line-height: 25px;
+  font-size: 14px;
+}

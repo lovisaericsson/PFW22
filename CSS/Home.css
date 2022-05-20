@@ -1,76 +1,73 @@
 body {
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  position: relative;
 }
 
 .menu {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    background-color: rgb(245, 245, 245);
-    z-index: 2;
-    position: absolute;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  background-color: rgb(245, 245, 245);
+  z-index: 2;
+  position: absolute;
 }
 
 .menuElement img {
-    height: 10vw;
-    width: 10vw;
+  height: 10vw;
+  width: 10vw;
 }
 
 .menuElement {
-    padding: 20px;
+  padding: 20px;
 }
 
 #background {
-    height: 100vh;
-    width: 100vw;
+  height: 100vh;
+  width: 100vw;
 }
 
 .bgImage {
-    display: flex;
-    z-index: -1;
-    height: 100vh;
-    width: 100vw;
-    position: relative;
-    top: 0;
-    left: 0;
-    overflow-x: hidden;
-    display: flex;
-    justify-content: center;
+  display: flex;
+  z-index: -1;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
 }
 
 .bgImage img {
-    box-sizing: content-box;
+  box-sizing: content-box;
 }
 
 .bgShape {
-    display: flex;
-    z-index: 1;
-    height: 25vh;
-    width: 25vh;
-    background-image: url(../Images/bgShape3.png);
-    background-size: cover;
-    position: absolute;
-    top: 60%;
-    right: 0%;
-    padding-right: 15px;
-    margin-right: 10px;
+  display: flex;
+  z-index: 1;
+  height: 25vh;
+  width: 25vh;
+  background-image: url(../Images/bgShape3.png);
+  background-size: cover;
+  position: absolute;
+  top: 60%;
+  right: 0%;
+  padding-right: 15px;
+  margin-right: 10px;
 }
 
 .icon {
-    display: flex;
-    z-index: 1;
-    height: 15vh;
-    width: 15vh;
-    background-image: url(../Images/icon-text.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    position: absolute;
-    top: 3%;
-    left: 3%;
+  display: flex;
+  z-index: 1;
+  height: 15vh;
+  width: 15vh;
+  background-image: url(../Images/icon-text.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 3%;
+  left: 3%;
 }
-
-
-
