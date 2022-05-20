@@ -19,7 +19,6 @@ function getProgramLevel(result) {
 
     return programLevel;
 }
-
 // Function to fetch each programme's location (returns string: "City name, Country name")
 function getProgramLocation(result) {
 

@@ -20,7 +20,6 @@ function getOutRating (result) {
             
         }
     }
-
     // Calculates an average of all ratings connected to category and city
     let averageOutRating = cityOutRating.reduce((a, b) => a + b, 0) / cityOutRating.length;
 
@@ -151,7 +150,7 @@ function getOutRating (result) {
         return cityEntertainment;
  }
 
- // Fetches a picture path for a photo for each city (for popUp div)
+ // Gets pitcure path based on parameter(result)
  function getCityPicturePath (result) {
 
     let photoPath = "";
