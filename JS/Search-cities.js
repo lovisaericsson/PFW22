@@ -21,13 +21,14 @@ function getOutRating (result) {
         }
     }
 
+    // Calculates an average of all ratings connected to category and city
     let averageOutRating = cityOutRating.reduce((a, b) => a + b, 0) / cityOutRating.length;
 
-    if (isNaN(averageOutRating) == true) {
+    if (isNaN(averageOutRating) == true) { // If rating (number) is NaN, return string "No ratings available"
         return "No ratings available";
     } 
     
-    if (isNaN(averageOutRating) == false) {
+    if (isNaN(averageOutRating) == false) { // If rating (number) is NOT NaN, return average rating rounded up to nearest decimal
         return Math.round(averageOutRating * 10) / 10;
     }
 
@@ -51,11 +52,11 @@ function getOutRating (result) {
 
     let averageAccomodationRating = cityAccomodationRating.reduce((a, b) => a + b, 0) / cityAccomodationRating.length;
 
-    if (isNaN(averageAccomodationRating) == true) {
+    if (isNaN(averageAccomodationRating) == true) { // If rating (number) is NaN, return string "No ratings available"
         return "No ratings available"
     } 
     
-    if (isNaN(averageAccomodationRating) == false) {
+    if (isNaN(averageAccomodationRating) == false) { // If rating (number) is NOT NaN, return average rating rounded up to nearest decimal
         return Math.round(averageAccomodationRating * 10) / 10;
     }
 
@@ -78,11 +79,11 @@ function getOutRating (result) {
 
     let averageFoodRating = cityFoodRating.reduce((a, b) => a + b, 0) / cityFoodRating.length;
 
-    if (isNaN(averageFoodRating) == true) {
+    if (isNaN(averageFoodRating) == true) { // If rating (number) is NaN, return string "No ratings available"
         return "No ratings available"
     } 
     
-    if (isNaN(averageFoodRating) == false) {
+    if (isNaN(averageFoodRating) == false) { // If rating (number) is NOT NaN, return average rating rounded up to nearest decimal
         return Math.round(averageFoodRating * 10) / 10;
     }
 
@@ -150,6 +151,7 @@ function getOutRating (result) {
         return cityEntertainment;
  }
 
+ // Fetches a picture path for a photo for each city (for popUp div)
  function getCityPicturePath (result) {
 
     let photoPath = "";
@@ -159,8 +161,8 @@ function getOutRating (result) {
 
         if (result.countryID == country.id) {
 
-            index = Math.floor(Math.random() * country.imagesNormal.length)
-            photoPath += country.imagesNormal[index];
+            index = Math.floor(Math.random() * country.imagesNormal.length) // Fill index with a random number based on the number of images connected to the country
+            photoPath += country.imagesNormal[index]; // Photo path filled with a random index number for the ImagesNormal array
 
         }
     }

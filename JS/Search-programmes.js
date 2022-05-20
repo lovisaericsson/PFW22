@@ -1,27 +1,26 @@
 "use strict";
 
-//Get the program level of each program, VERY general - can be substituted with "result" parameter and be used instead 
-//of for loop and have result.level instead of program.level
-
+// Get the program level of each program
 function getProgramLevel(result) {
 
     let programLevel = [];
 
-    if (result.level == 0) {
+    if (result.level == 0) { // if level = BACHELOR
         programLevel.push(LEVELS[0])
     }
 
-    if (result.level == 1) {
+    if (result.level == 1) { // if level = MASTER
         programLevel.push(LEVELS[1])
     }
 
-    if (result.level == 2) {
+    if (result.level == 2) { // if level = DOCTORATE
         programLevel.push(LEVELS[2])
     };
 
     return programLevel;
 }
 
+// Function to fetch each programme's location (returns string: "City name, Country name")
 function getProgramLocation(result) {
 
     let programCity = [];
@@ -57,6 +56,7 @@ function getProgramLocation(result) {
     return programLocation;
 }
 
+// Caculate and return the average rating (number) of the COURSES in the programme
 function getProgramRatingAverage(result) {
 
     let ratedProgram = [];
@@ -72,10 +72,12 @@ function getProgramRatingAverage(result) {
 
     let averageScore = ratedProgram.reduce((a, b) => a + b, 0) / ratedProgram.length;
 
+    // Returns the rating number rounded up to nearest decimal (number.decimal)
     return Math.round(averageScore * 10) / 10;
 
 }
 
+// Caculate and return the average rating (number) of the TEACHERS in the programme
 function getTeachersRatingAverage(result) {
 
     let ratedTeacher = []
@@ -91,10 +93,12 @@ function getTeachersRatingAverage(result) {
 
     let teacherAverageScore = ratedTeacher.reduce((a, b) => a + b, 0) / ratedTeacher.length;
 
+    // Returns the rating number rounded up to nearest decimal (number.decimal)
     return Math.round(teacherAverageScore * 10) / 10;
 
 }
 
+// Caculate and return the average rating (number) of the STUDENTS in the programme
 function getStudentsRatingAverage(result) {
 
     let ratedStudent = []
@@ -110,10 +114,12 @@ function getStudentsRatingAverage(result) {
 
     let studentAverageScore = ratedStudent.reduce((a, b) => a + b, 0) / ratedStudent.length;
 
+    // Returns the rating number rounded up to nearest decimal (number.decimal)
     return Math.round(studentAverageScore * 10) / 10;
 
 }
 
+// Fetches and returns the programme's (result) subject (FIELD)
 function getProgramSubject(result) {
 
     let programSubject = [];
@@ -127,6 +133,7 @@ function getProgramSubject(result) {
     return programSubject;
 }
 
+// Fetches and returns the programme's (result) LANGUAGE 
 function getProgramLanguage(result) {
 
     let programLanguage = "";
@@ -147,6 +154,7 @@ function getProgramLanguage(result) {
     return programLanguage;
 }
 
+// Fetches and returns the programme's (result) UNIVERSITY NAME 
 function getProgramUniversity(result) {
 
     let programUniversity = "";
