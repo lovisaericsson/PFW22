@@ -148,7 +148,7 @@ function getMathPrograms (result) {
 
   for (let university of UNIVERSITIES) {
     if (result.id == university.cityID) {
-      for (program of PROGRAMMES) {
+      for (let program of PROGRAMMES) {
         if (university.id == program.universityID && program.subjectID == 0) {
           mathProgramsInCity.push(program)
         }
@@ -165,7 +165,7 @@ function getTechnologyPrograms (result) {
 
   for (let university of UNIVERSITIES) {
     if (result.id == university.cityID) {
-      for (program of PROGRAMMES) {
+      for (let program of PROGRAMMES) {
         if (university.id == program.universityID && program.subjectID == 1) {
           technologyProgramsInCity.push(program)
         }
@@ -182,7 +182,7 @@ function getLawPrograms (result) {
 
   for (let university of UNIVERSITIES) {
     if (result.id == university.cityID) {
-      for (program of PROGRAMMES) {
+      for (let program of PROGRAMMES) {
         if (university.id == program.universityID && program.subjectID == 2) {
           lawProgramsInCity.push(program)
         }
@@ -199,7 +199,7 @@ function getMedicinePrograms (result) {
 
   for (let university of UNIVERSITIES) {
     if (result.id == university.cityID) {
-      for (program of PROGRAMMES) {
+      for (let program of PROGRAMMES) {
         if (university.id == program.universityID && program.subjectID == 3) {
           medicineProgramsInCity.push(program)
         }
@@ -216,7 +216,7 @@ function getSociologyPrograms (result) {
 
   for (let university of UNIVERSITIES) {
     if (result.id == university.cityID) {
-      for (program of PROGRAMMES) {
+      for (let program of PROGRAMMES) {
         if (university.id == program.universityID && program.subjectID == 4) {
           sociologyProgramsInCity.push(program)
         }
@@ -233,7 +233,7 @@ function getPhilosophyPrograms (result) {
 
   for (let university of UNIVERSITIES) {
     if (result.id == university.cityID) {
-      for (program of PROGRAMMES) {
+      for (let program of PROGRAMMES) {
         if (university.id == program.universityID && program.subjectID == 5) {
           philosophyProgramsInCity.push(program)
         }
@@ -250,7 +250,7 @@ function getDesignPrograms (result) {
 
   for (let university of UNIVERSITIES) {
     if (result.id == university.cityID) {
-      for (program of PROGRAMMES) {
+      for (let program of PROGRAMMES) {
         if (university.id == program.universityID && program.subjectID == 6) {
           designProgramsInCity.push(program)
         }
