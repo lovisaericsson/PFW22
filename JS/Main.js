@@ -231,7 +231,7 @@ function toggleOptions () {
     if (
       doctorateBtn.classList.contains('active') == true ||
       mastersBtn.classList.contains('active') == true ||
-        bachelorsBtn.classList.contains('active') == true
+      bachelorsBtn.classList.contains('active') == true
     ) {
       results = [...filterBacherlors(results)]
       results = [...filterMasters(results)]
@@ -246,7 +246,7 @@ function toggleOptions () {
       if (
         doctorateBtn.classList.contains('active') == true ||
         mastersBtn.classList.contains('active') == true ||
-          bachelorsBtn.classList.contains('active') == true
+        bachelorsBtn.classList.contains('active') == true
       ) {
         results = [...filterBacherlors(results)]
         results = [...filterMasters(results)]
@@ -591,7 +591,7 @@ function createDiv (typeDiv, result, wrapper) {
 
   return createDiv
 }
-//Creates city divs for country-dropdown 
+//Creates city divs for country-dropdown
 function createCityDivs (cities) {
   let cityContainer = document.createElement('div')
   cityContainer.classList.add('hidden-city-result')
@@ -602,12 +602,12 @@ function createCityDivs (cities) {
 
   return cityContainer
 }
-//Fetches cities based on countryID 
+//Fetches cities based on countryID
 function getCitiesFromCountry (id) {
   let cities = CITIES.filter(city => city.countryID == id)
   return cities
 }
-//Fetches info based on programid 
+//Fetches info based on programid
 function getInfoFromProgram (id) {
   let program = PROGRAMMES.filter(program => program.id == id)
   return program.name
