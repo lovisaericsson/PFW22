@@ -1,81 +1,79 @@
 body {
-    margin: 0;
+  margin: 0;
 }
 
 /* HEADER */
 .header {
-    width: 100vw;
-    height: 15vh;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #7392B7;
+  width: 100vw;
+  height: 15vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #7392b7;
 }
 
 h1 {
-    margin: 0;
-    color: white;
+  margin: 0;
+  color: white;
 }
 
 .box {
-    background-color: #D8E1E9;
-    padding: 20px;
-    margin: 20px;
-    border-radius: 10px;
-    width: 80%;
-    font-size: 5vw;
-    text-align:left;
-    background-size: 10vw;
-    background-repeat: no-repeat;
-    background-position: 98% 50%;
-    /* Arrow image is shown through JS */
+  background-color: #d8e1e9;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+  width: 80%;
+  font-size: 5vw;
+  text-align: left;
+  background-size: 10vw;
+  background-repeat: no-repeat;
+  background-position: 98% 50%;
+  /* Arrow image is shown through JS */
 }
 
 .box p {
-    margin: 0;
-    padding-right: 50px;
+  margin: 0;
+  padding-right: 50px;
 }
 
 .faq-arrow-down {
-    background-size: 10vw;
-    background-repeat: no-repeat;
-    background-position: 98% 50%;
+  background-size: 10vw;
+  background-repeat: no-repeat;
+  background-position: 98% 50%;
 }
 
 .faq-arrow-up {
-    background-size: 10vw;
-    background-repeat: no-repeat;
-    background-position: 98% 10%
+  background-size: 10vw;
+  background-repeat: no-repeat;
+  background-position: 98% 10%;
 }
 
-.hidden-answer-result{
-    display: none;
+.hidden-answer-result {
+  display: none;
 }
 
-.answer-result{
-    display: grid;
-    gap: 4px; 
+.answer-result {
+  display: grid;
+  gap: 4px;
 }
 
-.answer-result > div{
-    
-    border-radius: 10px;
-    font-size: 14px;
-    margin-top: 2vh;
-
+.answer-result > div {
+  border-radius: 10px;
+  font-size: 14px;
+  margin-top: 2vh;
 }
 
 .ad-faq {
-    background-color: #D0D0D0;
-    padding: 20px;
-    margin: 20px;
-    border-radius: 10px;
-    width: 80%;
-    height: 10vh;
-    font-size: 5vw;
-    text-align: left;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+  background-color: #d0d0d0;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+  width: 80%;
+  height: 10vh;
+  font-size: 5vw;
+  text-align: left;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
